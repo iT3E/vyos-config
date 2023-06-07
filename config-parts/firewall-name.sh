@@ -1,21 +1,51 @@
 #!/bin/vbash
 
+##VLANs
+#unifi-mgmt-900
+#unifi-frontend-910
+#k8s-120
+#iLO-550
+#pve-11
+#seccam-610
+#UISP-140
+#transit-10
+
+# From unifi-frontend-910 to seccam-610
+set firewall name unifi-frontend-910-seccam-610 default-action 'drop'
+set firewall name unifi-frontend-910-seccam-610 description 'From unifi-frontend-910 to seccam-610'
+set firewall name unifi-frontend-910-seccam-610 enable-default-log
+set firewall name unifi-frontend-910-seccam-610 rule 1 action 'accept'
+set firewall name unifi-frontend-910-seccam-610 rule 1 description 'Rule: accept_dhcp'
+set firewall name unifi-frontend-910-seccam-610 rule 1 destination port '67,68'
+set firewall name unifi-frontend-910-seccam-610 rule 1 protocol 'udp'
+set firewall name unifi-frontend-910-seccam-610 rule 1 source port '67,68'
+
+# From seccam-610 to unifi-frontend-910 
+set firewall name seccam-610-unifi-frontend-910 default-action 'drop'
+set firewall name seccam-610-unifi-frontend-910 description 'From unifi-frontend-910 to seccam-610'
+set firewall name seccam-610-unifi-frontend-910 enable-default-log
+set firewall name seccam-610-unifi-frontend-910 rule 1 action 'accept'
+set firewall name seccam-610-unifi-frontend-910 rule 1 description 'Rule: accept_dhcp'
+set firewall name seccam-610-unifi-frontend-910 rule 1 destination port '67,68'
+set firewall name seccam-610-unifi-frontend-910 rule 1 protocol 'udp'
+set firewall name seccam-610-unifi-frontend-910 rule 1 source port '67,68'
+
 # From GUEST to IOT
-set firewall name guest-iot default-action 'drop'
-set firewall name guest-iot description 'From GUEST to IOT'
-set firewall name guest-iot enable-default-log
-set firewall name guest-iot rule 1 action 'accept'
-set firewall name guest-iot rule 1 description 'Rule: accept_tcp_printer_from_allowed_devices'
-set firewall name guest-iot rule 1 destination group address-group 'printers'
-set firewall name guest-iot rule 1 destination port 'http,9100'
-set firewall name guest-iot rule 1 protocol 'tcp'
-set firewall name guest-iot rule 1 source group address-group 'printer_allowed'
-set firewall name guest-iot rule 2 action 'accept'
-set firewall name guest-iot rule 2 description 'Rule: accept_udp_printer_from_allowed_devices'
-set firewall name guest-iot rule 2 destination group address-group 'printers'
-set firewall name guest-iot rule 2 destination port '161'
-set firewall name guest-iot rule 2 protocol 'udp'
-set firewall name guest-iot rule 2 source group address-group 'printer_allowed'
+# set firewall name guest-iot default-action 'drop'
+# set firewall name guest-iot description 'From GUEST to IOT'
+# set firewall name guest-iot enable-default-log
+# set firewall name guest-iot rule 1 action 'accept'
+# set firewall name guest-iot rule 1 description 'Rule: accept_tcp_printer_from_allowed_devices'
+# set firewall name guest-iot rule 1 destination group address-group 'printers'
+# set firewall name guest-iot rule 1 destination port 'http,9100'
+# set firewall name guest-iot rule 1 protocol 'tcp'
+# set firewall name guest-iot rule 1 source group address-group 'printer_allowed'
+# set firewall name guest-iot rule 2 action 'accept'
+# set firewall name guest-iot rule 2 description 'Rule: accept_udp_printer_from_allowed_devices'
+# set firewall name guest-iot rule 2 destination group address-group 'printers'
+# set firewall name guest-iot rule 2 destination port '161'
+# set firewall name guest-iot rule 2 protocol 'udp'
+# set firewall name guest-iot rule 2 source group address-group 'printer_allowed'
 
 # From GUEST to LAN
 set firewall name guest-lan default-action 'drop'
