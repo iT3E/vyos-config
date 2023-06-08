@@ -9,6 +9,9 @@
 #seccam-610
 #UISP-140
 #transit-10
+#shome-710
+#ad-110
+#bastion-410
 
 # From unifi-frontend-910 to seccam-610
 set firewall name unifi-frontend-910-seccam-610 default-action 'drop'
@@ -19,6 +22,11 @@ set firewall name unifi-frontend-910-seccam-610 rule 1 description 'Rule: accept
 set firewall name unifi-frontend-910-seccam-610 rule 1 destination port '67,68'
 set firewall name unifi-frontend-910-seccam-610 rule 1 protocol 'udp'
 set firewall name unifi-frontend-910-seccam-610 rule 1 source port '67,68'
+set firewall name unifi-frontend-910-seccam-610 rule 6 action 'accept'
+set firewall name unifi-frontend-910-seccam-610 rule 6 description 'Rule: accept_discovery_from_sonos_players'
+set firewall name unifi-frontend-910-seccam-610 rule 6 destination port '1900,1901,1902'
+set firewall name unifi-frontend-910-seccam-610 rule 6 protocol 'udp'
+set firewall name unifi-frontend-910-seccam-610 rule 6 source group address-group 'sonos_players'
 
 # From seccam-610 to unifi-frontend-910 
 set firewall name seccam-610-unifi-frontend-910 default-action 'drop'
