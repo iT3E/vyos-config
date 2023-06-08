@@ -13,6 +13,27 @@ set firewall group address-group wyze_cameras address '10.10.91.158'
 set firewall group address-group wyze_cameras address '10.10.91.178'
 set firewall group address-group wyze_cameras address '10.10.91.113'
 
+set firewall group address-group security_cameras address '10.10.60.31'
+set firewall group address-group security_cameras address '10.10.60.32'
+set firewall group address-group security_cameras address '10.10.60.33'
+set firewall group address-group security_cameras address '10.10.60.34'
+set firewall group address-group security_cameras address '10.10.60.35'
+
+set firewall group address-group blue_iris address '10.10.60.210'
+
+set firewall group address-group seccam_nas address '10.10.60.10'
+
+set firewall group address-group it_pc address '10.10.93.232'
+
+set firewall group address-group ilo address '10.10.55.101'
+set firewall group address-group ilo address '10.10.55.102'
+set firewall group address-group ilo address '10.10.55.103'
+
+set firewall group address-group domain_controllers address '10.10.10.10'
+set firewall group address-group domain_controllers address '10.10.10.11'
+set firewall group address-group domain_controllers address '10.10.10.12'
+
+
 
 # set firewall group address-group 3d_printer_controllers address '10.1.3.56'
 
