@@ -9,9 +9,79 @@
 #seccam-610
 #UISP-140
 #transit-10
-#shome-710
+#iot-710
 #ad-110
 #bastion-410
+#app-720
+#vpn
+
+#FROM bastion-410 TO ad-110
+
+#FROM app-720 TO iot-710
+
+ 
+#######################
+##                   ##
+##  Internet Access  ##
+##                   ##
+#######################
+
+#FROM bastion-410 TO transit-10
+set firewall name bastion-410-transit-10 default-action 'accept'
+set firewall name bastion-410-transit-10 description 'From bastion-410 to transit-10'
+
+#FROM app-720 TO transit-10
+set firewall name app-720-transit-10 default-action 'accept'
+set firewall name app-720-transit-10 description 'From app-720 to transit-10'
+
+#FROM k8s-120 TO transit-10
+set firewall name app-720-transit-10 default-action 'accept'
+set firewall name app-720-transit-10 description 'From app-720 to transit-10'
+
+#FROM pve-11 TO transit-10
+set firewall name pve-11-transit-10 default-action 'accept'
+set firewall name pve-11-transit-10 description 'From pve-11 to transit-10'
+
+#FROM uisp-140 TO transit-10
+set firewall name uisp-140-transit-10 default-action 'accept'
+set firewall name uisp-140-transit-10 description 'From uisp-140 to transit-10'
+
+#FROM iot-710 TO transit-10
+set firewall name iot-710-transit-10 default-action 'accept'
+set firewall name iot-710-transit-10 description 'From iot-710 to transit-10'
+
+#FROM ad-110 TO transit-10
+set firewall name ad-110-transit-10 default-action 'accept'
+set firewall name ad-110-transit-10 description 'From ad-110 to transit-10'
+
+#FROM unifi-mgmt-900 TO transit-10
+set firewall name unifi-mgmt-900-transit-10 default-action 'accept'
+set firewall name unifi-mgmt-900-transit-10 description 'From unifi-mgmt-900 to transit-10'
+
+#FROM unifi-frontend-910 TO transit-10
+set firewall name unifi-frontend-910-transit-10 default-action 'accept'
+set firewall name unifi-frontend-910-transit-10 description 'From unifi-frontend-910 to transit-10'
+
+
+##################################
+##                              ##
+## MFA VPN access to everything ##
+##                              ##
+##################################
+
+#FROM vpn TO unifi-mgmt-900
+
+#FROM vpn TO unifi-frontend-910
+#FROM vpn TO ilo-550
+#FROM vpn TO pve-11
+#FROM vpn TO seccam-610
+#FROM vpn TO uisp-140
+#FROM vpn TO transit-10
+#FROM vpn TO iot-710
+#FROM vpn TO ad-110
+#FROM vpn TO bastion-410
+#FROM vpn TO app-720
+#FROM vpn TO k8s-120
 
 # From unifi-frontend-910 to seccam-610
 set firewall name unifi-frontend-910-seccam-610 default-action 'drop'
