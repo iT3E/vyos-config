@@ -33,7 +33,9 @@ set firewall group address-group domain_controllers address '10.10.10.10'
 set firewall group address-group domain_controllers address '10.10.10.11'
 set firewall group address-group domain_controllers address '10.10.10.12'
 
+set firewall group address-group hass address '10.10.72.201'
 
+set firewall group address-group unifi-udmpro address '10.10.90.1'
 
 # set firewall group address-group 3d_printer_controllers address '10.1.3.56'
 
