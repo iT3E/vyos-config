@@ -129,17 +129,50 @@ set firewall name app-720-unifi-frontend-910 rule 1 description 'Rule: hass_to_a
 set firewall name app-720-unifi-frontend-910 rule 1 source group address-group 'hass'
 
 #FROM bastion-410 TO ad-110
-#ad auth, rdp, powershell remoting
+set firewall name bastion-410-ad-110 default-action 'drop'
+set firewall name bastion-410-ad-110 description 'From bastion-410 to unifi-frontend-910'
+set firewall name bastion-410-ad-110 rule 1 action 'accept'
+set firewall name bastion-410-ad-110 rule 1 source group address-group 'windows_bastion'
+set firewall name bastion-410-ad-110 rule 1 destination group port-group 'ad_auth_ports'
+set firewall name bastion-410-ad-110 rule 2 action 'accept'
+set firewall name bastion-410-ad-110 rule 2 source group address-group 'windows_bastion'
+set firewall name bastion-410-ad-110 rule 2 destination port '3389'
+set firewall name bastion-410-ad-110 rule 3 action 'accept'
+set firewall name bastion-410-ad-110 rule 3 source group address-group 'windows_bastion'
+set firewall name bastion-410-ad-110 rule 3 destination group port-group 'powershell_remoting'
+
+#FROM bastion-410 TO seccam-610
+set firewall name bastion-410-seccam-610 default-action 'drop'
+set firewall name bastion-410-seccam-610 description 'From bastion-410 to seccam-610'
+set firewall name bastion-410-seccam-610 rule 1 action 'accept'
+set firewall name bastion-410-seccam-610 rule 1 source group address-group 'windows_bastion'
+set firewall name bastion-410-seccam-610 rule 1 destination group port-group 'powershell_remoting'
+set firewall name bastion-410-seccam-610 rule 2 action 'accept'
+set firewall name bastion-410-seccam-610 rule 2 source group address-group 'windows_bastion'
+set firewall name bastion-410-seccam-610 rule 2 destination port '3389'
 
 #FROM seccam-610 TO app-720
 #mosquitto mqtt
+set firewall name seccam-610-app-720 default-action 'drop'
+set firewall name seccam-610-app-720 description 'From seccam-610 to app-720'
+set firewall name seccam-610-app-720 rule 1 action 'accept'
+set firewall name seccam-610-app-720 rule 1 source group address-group 'blue_iris'
+set firewall name seccam-610-app-720 rule 1 destination group address-group 'hass'
+set firewall name seccam-610-app-720 rule 1 destination port '1883'
+
 
 #FROM seccam-610 TO ad-110
-#ad auth
+set firewall name seccam-610-ad-110 default-action 'drop'
+set firewall name seccam-610-ad-110 description 'From seccam-610 to unifi-frontend-910'
+set firewall name seccam-610-ad-110 rule 1 action 'accept'
+set firewall name seccam-610-ad-110 rule 1 source group address-group 'blue_iris'
+set firewall name seccam-610-ad-110 rule 1 destination group address-group 'domain_controllers'
+set firewall name seccam-610-ad-110 rule 1 destination group port-group 'ad_auth_ports'
 
 #FROM seccam-610 TO unifi-frontend-910
 set firewall name seccam-610-unifi-frontend-910 default-action 'drop'
 set firewall name seccam-610-unifi-frontend-910 description 'From seccam-610 to unifi-frontend-910'
+set firewall name seccam-610-unifi-frontend-910 rule 1 action 'accept'
 set firewall name seccam-610-unifi-frontend-910 rule 1 source group address-group 'blue_iris'
 set firewall name seccam-610-unifi-frontend-910 rule 1 destination group address-group 'wyze_cams'
 

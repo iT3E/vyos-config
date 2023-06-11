@@ -35,7 +35,30 @@ set firewall group address-group domain_controllers address '10.10.10.12'
 
 set firewall group address-group hass address '10.10.72.201'
 
+set firewall group address-group windows_bastion address '10.10.40.240'
+
 set firewall group address-group unifi-udmpro address '10.10.90.1'
+
+# # Port groups
+set firewall group port-group ad_auth_ports port '389'
+set firewall group port-group ad_auth_ports port '53'
+set firewall group port-group ad_auth_ports port '3268'
+set firewall group port-group ad_auth_ports port '3269'
+set firewall group port-group ad_auth_ports port '88'
+set firewall group port-group ad_auth_ports port '464'
+set firewall group port-group ad_auth_ports port '636'
+set firewall group port-group ad_auth_ports port '123'
+set firewall group port-group ad_auth_ports port '135'
+set firewall group port-group ad_auth_ports port '445'
+set firewall group port-group ad_auth_ports port '9389'
+set firewall group port-group ad_auth_ports port '5985'
+set firewall group port-group ad_auth_ports port '5986'
+set firewall group port-group ad_auth_ports port '6000-6199'
+set firewall group port-group ad_auth_ports port '49152-65535'
+
+set firewall group port-group powershell_remoting port '5985'
+set firewall group port-group powershell_remoting port '5986'
+
 
 # set firewall group address-group 3d_printer_controllers address '10.1.3.56'
 
