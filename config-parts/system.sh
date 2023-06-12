@@ -1,7 +1,7 @@
 #!/bin/vbash
 
 set system domain-name 'tnwks.local'
-set system host-name 'vyos01'
+set system host-name 'sce-vyos01'
 
 set system ipv6 disable-forwarding
 
