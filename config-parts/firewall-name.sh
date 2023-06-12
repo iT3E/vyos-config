@@ -14,9 +14,550 @@
 #app-720
 #vpn
 
-#FROM bastion-410 TO ad-110
 
- 
+
+# FROM unifi-mgmt-900 TO unifi-frontend-910
+set firewall name unifi-mgmt-900-unifi-frontend-910 default-action 'drop'
+set firewall name unifi-mgmt-900-unifi-frontend-910 description 'From unifi-mgmt-900 to unifi-frontend-910'
+set firewall name unifi-mgmt-900-unifi-frontend-910 enable-default-log
+
+# FROM unifi-mgmt-900 TO k8s-120
+set firewall name unifi-mgmt-900-k8s-120 default-action 'drop'
+set firewall name unifi-mgmt-900-k8s-120 description 'From unifi-mgmt-900 to k8s-120'
+set firewall name unifi-mgmt-900-k8s-120 enable-default-log
+
+# FROM unifi-mgmt-900 TO iLO-550
+set firewall name unifi-mgmt-900-iLO-550 default-action 'drop'
+set firewall name unifi-mgmt-900-iLO-550 description 'From unifi-mgmt-900 to iLO-550'
+set firewall name unifi-mgmt-900-iLO-550 enable-default-log
+
+# FROM unifi-mgmt-900 TO pve-11
+set firewall name unifi-mgmt-900-pve-11 default-action 'drop'
+set firewall name unifi-mgmt-900-pve-11 description 'From unifi-mgmt-900 to pve-11'
+set firewall name unifi-mgmt-900-pve-11 enable-default-log
+
+# FROM unifi-mgmt-900 TO seccam-610
+set firewall name unifi-mgmt-900-seccam-610 default-action 'drop'
+set firewall name unifi-mgmt-900-seccam-610 description 'From unifi-mgmt-900 to seccam-610'
+set firewall name unifi-mgmt-900-seccam-610 enable-default-log
+
+# FROM unifi-mgmt-900 TO UISP-140
+set firewall name unifi-mgmt-900-UISP-140 default-action 'drop'
+set firewall name unifi-mgmt-900-UISP-140 description 'From unifi-mgmt-900 to UISP-140'
+set firewall name unifi-mgmt-900-UISP-140 enable-default-log
+
+# FROM unifi-mgmt-900 TO ad-110
+set firewall name unifi-mgmt-900-ad-110 default-action 'drop'
+set firewall name unifi-mgmt-900-ad-110 description 'From unifi-mgmt-900 to ad-110'
+set firewall name unifi-mgmt-900-ad-110 enable-default-log
+
+# FROM unifi-mgmt-900 TO bastion-410
+set firewall name unifi-mgmt-900-bastion-410 default-action 'drop'
+set firewall name unifi-mgmt-900-bastion-410 description 'From unifi-mgmt-900 to bastion-410'
+set firewall name unifi-mgmt-900-bastion-410 enable-default-log
+
+# FROM unifi-mgmt-900 TO app-720
+set firewall name unifi-mgmt-900-app-720 default-action 'drop'
+set firewall name unifi-mgmt-900-app-720 description 'From unifi-mgmt-900 to app-720'
+set firewall name unifi-mgmt-900-app-720 enable-default-log
+
+# FROM unifi-frontend-910 TO unifi-mgmt-900
+set firewall name unifi-frontend-910-unifi-mgmt-900 default-action 'drop'
+set firewall name unifi-frontend-910-unifi-mgmt-900 description 'From unifi-frontend-910 to unifi-mgmt-900'
+set firewall name unifi-frontend-910-unifi-mgmt-900 enable-default-log
+
+# FROM unifi-frontend-910 TO k8s-120
+set firewall name unifi-frontend-910-k8s-120 default-action 'drop'
+set firewall name unifi-frontend-910-k8s-120 description 'From unifi-frontend-910 to k8s-120'
+set firewall name unifi-frontend-910-k8s-120 enable-default-log
+
+# FROM unifi-frontend-910 TO iLO-550
+set firewall name unifi-frontend-910-iLO-550 default-action 'drop'
+set firewall name unifi-frontend-910-iLO-550 description 'From unifi-frontend-910 to iLO-550'
+set firewall name unifi-frontend-910-iLO-550 enable-default-log
+
+# FROM unifi-frontend-910 TO pve-11
+set firewall name unifi-frontend-910-pve-11 default-action 'drop'
+set firewall name unifi-frontend-910-pve-11 description 'From unifi-frontend-910 to pve-11'
+set firewall name unifi-frontend-910-pve-11 enable-default-log
+
+# FROM unifi-frontend-910 TO seccam-610
+set firewall name unifi-frontend-910-seccam-610 default-action 'drop'
+set firewall name unifi-frontend-910-seccam-610 description 'From unifi-frontend-910 to seccam-610'
+set firewall name unifi-frontend-910-seccam-610 enable-default-log
+
+# FROM unifi-frontend-910 TO UISP-140
+set firewall name unifi-frontend-910-UISP-140 default-action 'drop'
+set firewall name unifi-frontend-910-UISP-140 description 'From unifi-frontend-910 to UISP-140'
+set firewall name unifi-frontend-910-UISP-140 enable-default-log
+
+# FROM unifi-frontend-910 TO ad-110
+set firewall name unifi-frontend-910-ad-110 default-action 'drop'
+set firewall name unifi-frontend-910-ad-110 description 'From unifi-frontend-910 to ad-110'
+set firewall name unifi-frontend-910-ad-110 enable-default-log
+
+# FROM unifi-frontend-910 TO bastion-410
+set firewall name unifi-frontend-910-bastion-410 default-action 'drop'
+set firewall name unifi-frontend-910-bastion-410 description 'From unifi-frontend-910 to bastion-410'
+set firewall name unifi-frontend-910-bastion-410 enable-default-log
+
+# FROM unifi-frontend-910 TO app-720
+set firewall name unifi-frontend-910-app-720 default-action 'drop'
+set firewall name unifi-frontend-910-app-720 description 'From unifi-frontend-910 to app-720'
+set firewall name unifi-frontend-910-app-720 enable-default-log
+
+# FROM k8s-120 TO unifi-mgmt-900
+set firewall name k8s-120-unifi-mgmt-900 default-action 'drop'
+set firewall name k8s-120-unifi-mgmt-900 description 'From k8s-120 to unifi-mgmt-900'
+set firewall name k8s-120-unifi-mgmt-900 enable-default-log
+
+# FROM k8s-120 TO unifi-frontend-910
+set firewall name k8s-120-unifi-frontend-910 default-action 'drop'
+set firewall name k8s-120-unifi-frontend-910 description 'From k8s-120 to unifi-frontend-910'
+set firewall name k8s-120-unifi-frontend-910 enable-default-log
+
+# FROM k8s-120 TO iLO-550
+set firewall name k8s-120-iLO-550 default-action 'drop'
+set firewall name k8s-120-iLO-550 description 'From k8s-120 to iLO-550'
+set firewall name k8s-120-iLO-550 enable-default-log
+
+# FROM k8s-120 TO pve-11
+set firewall name k8s-120-pve-11 default-action 'drop'
+set firewall name k8s-120-pve-11 description 'From k8s-120 to pve-11'
+set firewall name k8s-120-pve-11 enable-default-log
+
+# FROM k8s-120 TO seccam-610
+set firewall name k8s-120-seccam-610 default-action 'drop'
+set firewall name k8s-120-seccam-610 description 'From k8s-120 to seccam-610'
+set firewall name k8s-120-seccam-610 enable-default-log
+
+# FROM k8s-120 TO UISP-140
+set firewall name k8s-120-UISP-140 default-action 'drop'
+set firewall name k8s-120-UISP-140 description 'From k8s-120 to UISP-140'
+set firewall name k8s-120-UISP-140 enable-default-log
+
+# FROM k8s-120 TO ad-110
+set firewall name k8s-120-ad-110 default-action 'drop'
+set firewall name k8s-120-ad-110 description 'From k8s-120 to ad-110'
+set firewall name k8s-120-ad-110 enable-default-log
+
+# FROM k8s-120 TO bastion-410
+set firewall name k8s-120-bastion-410 default-action 'drop'
+set firewall name k8s-120-bastion-410 description 'From k8s-120 to bastion-410'
+set firewall name k8s-120-bastion-410 enable-default-log
+
+# FROM k8s-120 TO app-720
+set firewall name k8s-120-app-720 default-action 'drop'
+set firewall name k8s-120-app-720 description 'From k8s-120 to app-720'
+set firewall name k8s-120-app-720 enable-default-log
+
+# FROM iLO-550 TO unifi-mgmt-900
+set firewall name iLO-550-unifi-mgmt-900 default-action 'drop'
+set firewall name iLO-550-unifi-mgmt-900 description 'From iLO-550 to unifi-mgmt-900'
+set firewall name iLO-550-unifi-mgmt-900 enable-default-log
+
+# FROM iLO-550 TO unifi-frontend-910
+set firewall name iLO-550-unifi-frontend-910 default-action 'drop'
+set firewall name iLO-550-unifi-frontend-910 description 'From iLO-550 to unifi-frontend-910'
+set firewall name iLO-550-unifi-frontend-910 enable-default-log
+
+# FROM iLO-550 TO k8s-120
+set firewall name iLO-550-k8s-120 default-action 'drop'
+set firewall name iLO-550-k8s-120 description 'From iLO-550 to k8s-120'
+set firewall name iLO-550-k8s-120 enable-default-log
+
+# FROM iLO-550 TO pve-11
+set firewall name iLO-550-pve-11 default-action 'drop'
+set firewall name iLO-550-pve-11 description 'From iLO-550 to pve-11'
+set firewall name iLO-550-pve-11 enable-default-log
+
+# FROM iLO-550 TO seccam-610
+set firewall name iLO-550-seccam-610 default-action 'drop'
+set firewall name iLO-550-seccam-610 description 'From iLO-550 to seccam-610'
+set firewall name iLO-550-seccam-610 enable-default-log
+
+# FROM iLO-550 TO UISP-140
+set firewall name iLO-550-UISP-140 default-action 'drop'
+set firewall name iLO-550-UISP-140 description 'From iLO-550 to UISP-140'
+set firewall name iLO-550-UISP-140 enable-default-log
+
+# FROM iLO-550 TO ad-110
+set firewall name iLO-550-ad-110 default-action 'drop'
+set firewall name iLO-550-ad-110 description 'From iLO-550 to ad-110'
+set firewall name iLO-550-ad-110 enable-default-log
+
+# FROM iLO-550 TO bastion-410
+set firewall name iLO-550-bastion-410 default-action 'drop'
+set firewall name iLO-550-bastion-410 description 'From iLO-550 to bastion-410'
+set firewall name iLO-550-bastion-410 enable-default-log
+
+# FROM iLO-550 TO app-720
+set firewall name iLO-550-app-720 default-action 'drop'
+set firewall name iLO-550-app-720 description 'From iLO-550 to app-720'
+set firewall name iLO-550-app-720 enable-default-log
+
+# FROM pve-11 TO unifi-mgmt-900
+set firewall name pve-11-unifi-mgmt-900 default-action 'drop'
+set firewall name pve-11-unifi-mgmt-900 description 'From pve-11 to unifi-mgmt-900'
+set firewall name pve-11-unifi-mgmt-900 enable-default-log
+
+# FROM pve-11 TO unifi-frontend-910
+set firewall name pve-11-unifi-frontend-910 default-action 'drop'
+set firewall name pve-11-unifi-frontend-910 description 'From pve-11 to unifi-frontend-910'
+set firewall name pve-11-unifi-frontend-910 enable-default-log
+
+# FROM pve-11 TO k8s-120
+set firewall name pve-11-k8s-120 default-action 'drop'
+set firewall name pve-11-k8s-120 description 'From pve-11 to k8s-120'
+set firewall name pve-11-k8s-120 enable-default-log
+
+# FROM pve-11 TO iLO-550
+set firewall name pve-11-iLO-550 default-action 'drop'
+set firewall name pve-11-iLO-550 description 'From pve-11 to iLO-550'
+set firewall name pve-11-iLO-550 enable-default-log
+
+# FROM pve-11 TO seccam-610
+set firewall name pve-11-seccam-610 default-action 'drop'
+set firewall name pve-11-seccam-610 description 'From pve-11 to seccam-610'
+set firewall name pve-11-seccam-610 enable-default-log
+
+# FROM pve-11 TO UISP-140
+set firewall name pve-11-UISP-140 default-action 'drop'
+set firewall name pve-11-UISP-140 description 'From pve-11 to UISP-140'
+set firewall name pve-11-UISP-140 enable-default-log
+
+# FROM pve-11 TO ad-110
+set firewall name pve-11-ad-110 default-action 'drop'
+set firewall name pve-11-ad-110 description 'From pve-11 to ad-110'
+set firewall name pve-11-ad-110 enable-default-log
+
+# FROM pve-11 TO bastion-410
+set firewall name pve-11-bastion-410 default-action 'drop'
+set firewall name pve-11-bastion-410 description 'From pve-11 to bastion-410'
+set firewall name pve-11-bastion-410 enable-default-log
+
+# FROM pve-11 TO app-720
+set firewall name pve-11-app-720 default-action 'drop'
+set firewall name pve-11-app-720 description 'From pve-11 to app-720'
+set firewall name pve-11-app-720 enable-default-log
+
+# FROM seccam-610 TO unifi-mgmt-900
+set firewall name seccam-610-unifi-mgmt-900 default-action 'drop'
+set firewall name seccam-610-unifi-mgmt-900 description 'From seccam-610 to unifi-mgmt-900'
+set firewall name seccam-610-unifi-mgmt-900 enable-default-log
+
+# FROM seccam-610 TO unifi-frontend-910
+set firewall name seccam-610-unifi-frontend-910 default-action 'drop'
+set firewall name seccam-610-unifi-frontend-910 description 'From seccam-610 to unifi-frontend-910'
+set firewall name seccam-610-unifi-frontend-910 enable-default-log
+set firewall name seccam-610-unifi-frontend-910 rule 1 action 'accept'
+set firewall name seccam-610-unifi-frontend-910 rule 1 source group address-group 'blue_iris'
+set firewall name seccam-610-unifi-frontend-910 rule 1 destination group address-group 'wyze_cams'
+
+# FROM seccam-610 TO k8s-120
+set firewall name seccam-610-k8s-120 default-action 'drop'
+set firewall name seccam-610-k8s-120 description 'From seccam-610 to k8s-120'
+set firewall name seccam-610-k8s-120 enable-default-log
+
+# FROM seccam-610 TO iLO-550
+set firewall name seccam-610-iLO-550 default-action 'drop'
+set firewall name seccam-610-iLO-550 description 'From seccam-610 to iLO-550'
+set firewall name seccam-610-iLO-550 enable-default-log
+
+# FROM seccam-610 TO pve-11
+set firewall name seccam-610-pve-11 default-action 'drop'
+set firewall name seccam-610-pve-11 description 'From seccam-610 to pve-11'
+set firewall name seccam-610-pve-11 enable-default-log
+
+# FROM seccam-610 TO UISP-140
+set firewall name seccam-610-UISP-140 default-action 'drop'
+set firewall name seccam-610-UISP-140 description 'From seccam-610 to UISP-140'
+set firewall name seccam-610-UISP-140 enable-default-log
+
+# FROM seccam-610 TO transit-10
+set firewall name seccam-610-transit-10 default-action 'drop'
+set firewall name seccam-610-transit-10 description 'From seccam-610 to transit-10'
+set firewall name seccam-610-transit-10 enable-default-log
+set firewall name seccam-610-transit-10 rule 1 action 'accept'
+set firewall name seccam-610-transit-10 rule 1 source group address-group 'blue_iris'
+
+# FROM seccam-610 TO ad-110
+set firewall name seccam-610-ad-110 default-action 'drop'
+set firewall name seccam-610-ad-110 description 'From seccam-610 to ad-110'
+set firewall name seccam-610-ad-110 enable-default-log
+set firewall name seccam-610-ad-110 rule 1 action 'accept'
+set firewall name seccam-610-ad-110 rule 1 source group address-group 'blue_iris'
+set firewall name seccam-610-ad-110 rule 1 destination group address-group 'domain_controllers'
+set firewall name seccam-610-ad-110 rule 1 destination group port-group 'ad_auth_ports'
+
+# FROM seccam-610 TO bastion-410
+set firewall name seccam-610-bastion-410 default-action 'drop'
+set firewall name seccam-610-bastion-410 description 'From seccam-610 to bastion-410'
+set firewall name seccam-610-bastion-410 enable-default-log
+
+#FROM seccam-610 TO app-720
+set firewall name seccam-610-app-720 default-action 'drop'
+set firewall name seccam-610-app-720 description 'From seccam-610 to app-720'
+set firewall name seccam-610-app-720 enable-default-log
+set firewall name seccam-610-app-720 rule 1 action 'accept'
+set firewall name seccam-610-app-720 rule 1 description 'Rule: mosquitto_mqtt'
+set firewall name seccam-610-app-720 rule 1 source group address-group 'blue_iris'
+set firewall name seccam-610-app-720 rule 1 destination group address-group 'hass'
+set firewall name seccam-610-app-720 rule 1 destination port '1883'
+
+# FROM UISP-140 TO unifi-mgmt-900
+set firewall name UISP-140-unifi-mgmt-900 default-action 'drop'
+set firewall name UISP-140-unifi-mgmt-900 description 'From UISP-140 to unifi-mgmt-900'
+set firewall name UISP-140-unifi-mgmt-900 enable-default-log
+
+# FROM UISP-140 TO unifi-frontend-910
+set firewall name UISP-140-unifi-frontend-910 default-action 'drop'
+set firewall name UISP-140-unifi-frontend-910 description 'From UISP-140 to unifi-frontend-910'
+set firewall name UISP-140-unifi-frontend-910 enable-default-log
+
+# FROM UISP-140 TO k8s-120
+set firewall name UISP-140-k8s-120 default-action 'drop'
+set firewall name UISP-140-k8s-120 description 'From UISP-140 to k8s-120'
+set firewall name UISP-140-k8s-120 enable-default-log
+
+# FROM UISP-140 TO iLO-550
+set firewall name UISP-140-iLO-550 default-action 'drop'
+set firewall name UISP-140-iLO-550 description 'From UISP-140 to iLO-550'
+set firewall name UISP-140-iLO-550 enable-default-log
+
+# FROM UISP-140 TO pve-11
+set firewall name UISP-140-pve-11 default-action 'drop'
+set firewall name UISP-140-pve-11 description 'From UISP-140 to pve-11'
+set firewall name UISP-140-pve-11 enable-default-log
+
+# FROM UISP-140 TO seccam-610
+set firewall name UISP-140-seccam-610 default-action 'drop'
+set firewall name UISP-140-seccam-610 description 'From UISP-140 to seccam-610'
+set firewall name UISP-140-seccam-610 enable-default-log
+
+# FROM UISP-140 TO ad-110
+set firewall name UISP-140-ad-110 default-action 'drop'
+set firewall name UISP-140-ad-110 description 'From UISP-140 to ad-110'
+set firewall name UISP-140-ad-110 enable-default-log
+
+# FROM UISP-140 TO bastion-410
+set firewall name UISP-140-bastion-410 default-action 'drop'
+set firewall name UISP-140-bastion-410 description 'From UISP-140 to bastion-410'
+set firewall name UISP-140-bastion-410 enable-default-log
+
+# FROM UISP-140 TO app-720
+set firewall name UISP-140-app-720 default-action 'drop'
+set firewall name UISP-140-app-720 description 'From UISP-140 to app-720'
+set firewall name UISP-140-app-720 enable-default-log
+
+# FROM transit-10 TO unifi-mgmt-900
+set firewall name transit-10-unifi-mgmt-900 default-action 'drop'
+set firewall name transit-10-unifi-mgmt-900 description 'From transit-10 to unifi-mgmt-900'
+set firewall name transit-10-unifi-mgmt-900 enable-default-log
+
+# FROM transit-10 TO unifi-frontend-910
+set firewall name transit-10-unifi-frontend-910 default-action 'drop'
+set firewall name transit-10-unifi-frontend-910 description 'From transit-10 to unifi-frontend-910'
+set firewall name transit-10-unifi-frontend-910 enable-default-log
+
+# FROM transit-10 TO k8s-120
+set firewall name transit-10-k8s-120 default-action 'drop'
+set firewall name transit-10-k8s-120 description 'From transit-10 to k8s-120'
+set firewall name transit-10-k8s-120 enable-default-log
+
+# FROM transit-10 TO iLO-550
+set firewall name transit-10-iLO-550 default-action 'drop'
+set firewall name transit-10-iLO-550 description 'From transit-10 to iLO-550'
+set firewall name transit-10-iLO-550 enable-default-log
+
+# FROM transit-10 TO pve-11
+set firewall name transit-10-pve-11 default-action 'drop'
+set firewall name transit-10-pve-11 description 'From transit-10 to pve-11'
+set firewall name transit-10-pve-11 enable-default-log
+
+# FROM transit-10 TO seccam-610
+set firewall name transit-10-seccam-610 default-action 'drop'
+set firewall name transit-10-seccam-610 description 'From transit-10 to seccam-610'
+set firewall name transit-10-seccam-610 enable-default-log
+
+# FROM transit-10 TO UISP-140
+set firewall name transit-10-UISP-140 default-action 'drop'
+set firewall name transit-10-UISP-140 description 'From transit-10 to UISP-140'
+set firewall name transit-10-UISP-140 enable-default-log
+
+# FROM transit-10 TO ad-110
+set firewall name transit-10-ad-110 default-action 'drop'
+set firewall name transit-10-ad-110 description 'From transit-10 to ad-110'
+set firewall name transit-10-ad-110 enable-default-log
+
+# FROM transit-10 TO bastion-410
+set firewall name transit-10-bastion-410 default-action 'drop'
+set firewall name transit-10-bastion-410 description 'From transit-10 to bastion-410'
+set firewall name transit-10-bastion-410 enable-default-log
+
+# FROM transit-10 TO app-720
+set firewall name transit-10-app-720 default-action 'drop'
+set firewall name transit-10-app-720 description 'From transit-10 to app-720'
+set firewall name transit-10-app-720 enable-default-log
+
+# FROM ad-110 TO unifi-mgmt-900
+set firewall name ad-110-unifi-mgmt-900 default-action 'drop'
+set firewall name ad-110-unifi-mgmt-900 description 'From ad-110 to unifi-mgmt-900'
+set firewall name ad-110-unifi-mgmt-900 enable-default-log
+
+# FROM ad-110 TO unifi-frontend-910
+set firewall name ad-110-unifi-frontend-910 default-action 'drop'
+set firewall name ad-110-unifi-frontend-910 description 'From ad-110 to unifi-frontend-910'
+set firewall name ad-110-unifi-frontend-910 enable-default-log
+
+# FROM ad-110 TO k8s-120
+set firewall name ad-110-k8s-120 default-action 'drop'
+set firewall name ad-110-k8s-120 description 'From ad-110 to k8s-120'
+set firewall name ad-110-k8s-120 enable-default-log
+
+# FROM ad-110 TO iLO-550
+set firewall name ad-110-iLO-550 default-action 'drop'
+set firewall name ad-110-iLO-550 description 'From ad-110 to iLO-550'
+set firewall name ad-110-iLO-550 enable-default-log
+
+# FROM ad-110 TO pve-11
+set firewall name ad-110-pve-11 default-action 'drop'
+set firewall name ad-110-pve-11 description 'From ad-110 to pve-11'
+set firewall name ad-110-pve-11 enable-default-log
+
+# FROM ad-110 TO seccam-610
+set firewall name ad-110-seccam-610 default-action 'drop'
+set firewall name ad-110-seccam-610 description 'From ad-110 to seccam-610'
+set firewall name ad-110-seccam-610 enable-default-log
+
+# FROM ad-110 TO UISP-140
+set firewall name ad-110-UISP-140 default-action 'drop'
+set firewall name ad-110-UISP-140 description 'From ad-110 to UISP-140'
+set firewall name ad-110-UISP-140 enable-default-log
+
+# FROM ad-110 TO bastion-410
+set firewall name ad-110-bastion-410 default-action 'drop'
+set firewall name ad-110-bastion-410 description 'From ad-110 to bastion-410'
+set firewall name ad-110-bastion-410 enable-default-log
+
+# FROM ad-110 TO app-720
+set firewall name ad-110-app-720 default-action 'drop'
+set firewall name ad-110-app-720 description 'From ad-110 to app-720'
+set firewall name ad-110-app-720 enable-default-log
+
+# FROM bastion-410 TO unifi-mgmt-900
+set firewall name bastion-410-unifi-mgmt-900 default-action 'drop'
+set firewall name bastion-410-unifi-mgmt-900 description 'From bastion-410 to unifi-mgmt-900'
+set firewall name bastion-410-unifi-mgmt-900 enable-default-log
+
+# FROM bastion-410 TO unifi-frontend-910
+set firewall name bastion-410-unifi-frontend-910 default-action 'drop'
+set firewall name bastion-410-unifi-frontend-910 description 'From bastion-410 to unifi-frontend-910'
+set firewall name bastion-410-unifi-frontend-910 enable-default-log
+
+# FROM bastion-410 TO k8s-120
+set firewall name bastion-410-k8s-120 default-action 'drop'
+set firewall name bastion-410-k8s-120 description 'From bastion-410 to k8s-120'
+set firewall name bastion-410-k8s-120 enable-default-log
+
+# FROM bastion-410 TO iLO-550
+set firewall name bastion-410-iLO-550 default-action 'drop'
+set firewall name bastion-410-iLO-550 description 'From bastion-410 to iLO-550'
+set firewall name bastion-410-iLO-550 enable-default-log
+
+# FROM bastion-410 TO pve-11
+set firewall name bastion-410-pve-11 default-action 'drop'
+set firewall name bastion-410-pve-11 description 'From bastion-410 to pve-11'
+set firewall name bastion-410-pve-11 enable-default-log
+
+# FROM bastion-410 TO seccam-610
+set firewall name bastion-410-seccam-610 default-action 'drop'
+set firewall name bastion-410-seccam-610 description 'From bastion-410 to seccam-610'
+set firewall name bastion-410-seccam-610 enable-default-log
+set firewall name bastion-410-seccam-610 rule 1 action 'accept'
+set firewall name bastion-410-seccam-610 rule 1 source group address-group 'windows_bastion'
+set firewall name bastion-410-seccam-610 rule 1 destination group port-group 'powershell_remoting'
+set firewall name bastion-410-seccam-610 rule 2 action 'accept'
+set firewall name bastion-410-seccam-610 rule 2 source group address-group 'windows_bastion'
+set firewall name bastion-410-seccam-610 rule 2 destination port '3389'
+
+# FROM bastion-410 TO UISP-140
+set firewall name bastion-410-UISP-140 default-action 'drop'
+set firewall name bastion-410-UISP-140 description 'From bastion-410 to UISP-140'
+set firewall name bastion-410-UISP-140 enable-default-log
+
+# FROM bastion-410 TO ad-110
+set firewall name bastion-410-ad-110 default-action 'drop'
+set firewall name bastion-410-ad-110 description 'From bastion-410 to ad-110'
+set firewall name bastion-410-ad-110 enable-default-log
+set firewall name bastion-410-ad-110 rule 1 action 'accept'
+set firewall name bastion-410-ad-110 rule 1 source group address-group 'windows_bastion'
+set firewall name bastion-410-ad-110 rule 1 destination group port-group 'ad_auth_ports'
+set firewall name bastion-410-ad-110 rule 2 action 'accept'
+set firewall name bastion-410-ad-110 rule 2 source group address-group 'windows_bastion'
+set firewall name bastion-410-ad-110 rule 2 destination port '3389'
+set firewall name bastion-410-ad-110 rule 3 action 'accept'
+set firewall name bastion-410-ad-110 rule 3 source group address-group 'windows_bastion'
+set firewall name bastion-410-ad-110 rule 3 destination group port-group 'powershell_remoting'
+
+# FROM bastion-410 TO app-720
+set firewall name bastion-410-app-720 default-action 'drop'
+set firewall name bastion-410-app-720 description 'From bastion-410 to app-720'
+set firewall name bastion-410-app-720 enable-default-log
+
+# FROM app-720 TO unifi-mgmt-900
+set firewall name app-720-unifi-mgmt-900 default-action 'drop'
+set firewall name app-720-unifi-mgmt-900 description 'From app-720 to unifi-mgmt-900'
+set firewall name app-720-unifi-mgmt-900 enable-default-log
+set firewall name app-720-unifi-mgmt-900 rule 1 action 'accept'
+set firewall name app-720-unifi-mgmt-900 rule 1 description 'Rule: hass_to_unifi-udmpro'
+set firewall name app-720-unifi-mgmt-900 rule 1 source group address-group 'hass'
+set firewall name app-720-unifi-mgmt-900 rule 1 destination group address-group 'unifi-udmpro'
+set firewall name app-720-unifi-mgmt-900 rule 1 destination port '80,443'
+
+# FROM app-720 TO unifi-frontend-910
+set firewall name app-720-unifi-frontend-910 default-action 'drop'
+set firewall name app-720-unifi-frontend-910 description 'From app-720 to unifi-frontend-910'
+set firewall name app-720-unifi-frontend-910 enable-default-log
+set firewall name app-720-unifi-frontend-910 rule 1 action 'accept'
+set firewall name app-720-unifi-frontend-910 rule 1 description 'Rule: hass_to_all_frontend'
+set firewall name app-720-unifi-frontend-910 rule 1 source group address-group 'hass'
+# FROM app-720 TO k8s-120
+set firewall name app-720-k8s-120 default-action 'drop'
+set firewall name app-720-k8s-120 description 'From app-720 to k8s-120'
+set firewall name app-720-k8s-120 enable-default-log
+
+# FROM app-720 TO iLO-550
+set firewall name app-720-iLO-550 default-action 'drop'
+set firewall name app-720-iLO-550 description 'From app-720 to iLO-550'
+set firewall name app-720-iLO-550 enable-default-log
+
+# FROM app-720 TO pve-11
+set firewall name app-720-pve-11 default-action 'drop'
+set firewall name app-720-pve-11 description 'From app-720 to pve-11'
+set firewall name app-720-pve-11 enable-default-log
+
+# FROM app-720 TO seccam-610
+set firewall name app-720-seccam-610 default-action 'drop'
+set firewall name app-720-seccam-610 description 'From app-720 to seccam-610'
+set firewall name app-720-seccam-610 enable-default-log
+
+# FROM app-720 TO UISP-140
+set firewall name app-720-UISP-140 default-action 'drop'
+set firewall name app-720-UISP-140 description 'From app-720 to UISP-140'
+set firewall name app-720-UISP-140 enable-default-log
+
+
+# FROM app-720 TO ad-110
+set firewall name app-720-ad-110 default-action 'drop'
+set firewall name app-720-ad-110 description 'From app-720 to ad-110'
+set firewall name app-720-ad-110 enable-default-log
+
+# FROM app-720 TO bastion-410
+set firewall name app-720-bastion-410 default-action 'drop'
+set firewall name app-720-bastion-410 description 'From app-720 to bastion-410'
+set firewall name app-720-bastion-410 enable-default-log
+
 #######################
 ##                   ##
 ##  Internet Access  ##
@@ -54,7 +595,6 @@ set firewall name unifi-mgmt-900-transit-10 description 'From unifi-mgmt-900 to 
 #FROM unifi-frontend-910 TO transit-10
 set firewall name unifi-frontend-910-transit-10 default-action 'accept'
 set firewall name unifi-frontend-910-transit-10 description 'From unifi-frontend-910 to transit-10'
-
 
 ##################################
 ##                              ##
@@ -110,107 +650,6 @@ set firewall name vpn-k8s-120 description 'From vpn to k8s-120'
 #################
 #################
 #################
-
-#FROM app-720 TO unifi-mgmt-900
-#hass to unifi network controller
-set firewall name app-720-unifi-mgmt-900 default-action 'drop'
-set firewall name app-720-unifi-mgmt-900 description 'From app-720 to unifi-mgmt-900'
-set firewall name app-720-unifi-mgmt-900 rule 1 action 'accept'
-set firewall name app-720-unifi-mgmt-900 rule 1 description 'Rule: hass_to_unifi-udmpro'
-set firewall name app-720-unifi-mgmt-900 rule 1 source group address-group 'hass'
-set firewall name app-720-unifi-mgmt-900 rule 1 destination group address-group 'unifi-udmpro'
-set firewall name app-720-unifi-mgmt-900 rule 1 destination port '80,443'
-
-#FROM app-720 TO unifi-frontend-910
-set firewall name app-720-unifi-frontend-910 default-action 'drop'
-set firewall name app-720-unifi-frontend-910 description 'From app-720 to unifi-frontend-910'
-set firewall name app-720-unifi-frontend-910 rule 1 action 'accept'
-set firewall name app-720-unifi-frontend-910 rule 1 description 'Rule: hass_to_all_frontend'
-set firewall name app-720-unifi-frontend-910 rule 1 source group address-group 'hass'
-
-#FROM bastion-410 TO ad-110
-set firewall name bastion-410-ad-110 default-action 'drop'
-set firewall name bastion-410-ad-110 description 'From bastion-410 to unifi-frontend-910'
-set firewall name bastion-410-ad-110 rule 1 action 'accept'
-set firewall name bastion-410-ad-110 rule 1 source group address-group 'windows_bastion'
-set firewall name bastion-410-ad-110 rule 1 destination group port-group 'ad_auth_ports'
-set firewall name bastion-410-ad-110 rule 2 action 'accept'
-set firewall name bastion-410-ad-110 rule 2 source group address-group 'windows_bastion'
-set firewall name bastion-410-ad-110 rule 2 destination port '3389'
-set firewall name bastion-410-ad-110 rule 3 action 'accept'
-set firewall name bastion-410-ad-110 rule 3 source group address-group 'windows_bastion'
-set firewall name bastion-410-ad-110 rule 3 destination group port-group 'powershell_remoting'
-
-#FROM bastion-410 TO seccam-610
-set firewall name bastion-410-seccam-610 default-action 'drop'
-set firewall name bastion-410-seccam-610 description 'From bastion-410 to seccam-610'
-set firewall name bastion-410-seccam-610 rule 1 action 'accept'
-set firewall name bastion-410-seccam-610 rule 1 source group address-group 'windows_bastion'
-set firewall name bastion-410-seccam-610 rule 1 destination group port-group 'powershell_remoting'
-set firewall name bastion-410-seccam-610 rule 2 action 'accept'
-set firewall name bastion-410-seccam-610 rule 2 source group address-group 'windows_bastion'
-set firewall name bastion-410-seccam-610 rule 2 destination port '3389'
-
-#FROM seccam-610 TO app-720
-#mosquitto mqtt
-set firewall name seccam-610-app-720 default-action 'drop'
-set firewall name seccam-610-app-720 description 'From seccam-610 to app-720'
-set firewall name seccam-610-app-720 rule 1 action 'accept'
-set firewall name seccam-610-app-720 rule 1 source group address-group 'blue_iris'
-set firewall name seccam-610-app-720 rule 1 destination group address-group 'hass'
-set firewall name seccam-610-app-720 rule 1 destination port '1883'
-
-
-#FROM seccam-610 TO ad-110
-set firewall name seccam-610-ad-110 default-action 'drop'
-set firewall name seccam-610-ad-110 description 'From seccam-610 to unifi-frontend-910'
-set firewall name seccam-610-ad-110 rule 1 action 'accept'
-set firewall name seccam-610-ad-110 rule 1 source group address-group 'blue_iris'
-set firewall name seccam-610-ad-110 rule 1 destination group address-group 'domain_controllers'
-set firewall name seccam-610-ad-110 rule 1 destination group port-group 'ad_auth_ports'
-
-#FROM seccam-610 TO unifi-frontend-910
-set firewall name seccam-610-unifi-frontend-910 default-action 'drop'
-set firewall name seccam-610-unifi-frontend-910 description 'From seccam-610 to unifi-frontend-910'
-set firewall name seccam-610-unifi-frontend-910 rule 1 action 'accept'
-set firewall name seccam-610-unifi-frontend-910 rule 1 source group address-group 'blue_iris'
-set firewall name seccam-610-unifi-frontend-910 rule 1 destination group address-group 'wyze_cams'
-
-
-
-
-
-
-
-
-
-##            ##
-## "examples" ##
-##            ##
-# From unifi-frontend-910 to seccam-610
-set firewall name unifi-frontend-910-seccam-610 default-action 'drop'
-set firewall name unifi-frontend-910-seccam-610 description 'From unifi-frontend-910 to seccam-610'
-set firewall name unifi-frontend-910-seccam-610 enable-default-log
-set firewall name unifi-frontend-910-seccam-610 rule 1 action 'accept'
-set firewall name unifi-frontend-910-seccam-610 rule 1 description 'Rule: accept_dhcp'
-set firewall name unifi-frontend-910-seccam-610 rule 1 destination port '67,68'
-set firewall name unifi-frontend-910-seccam-610 rule 1 protocol 'udp'
-set firewall name unifi-frontend-910-seccam-610 rule 1 source port '67,68'
-set firewall name unifi-frontend-910-seccam-610 rule 6 action 'accept'
-set firewall name unifi-frontend-910-seccam-610 rule 6 description 'Rule: accept_discovery_from_sonos_players'
-set firewall name unifi-frontend-910-seccam-610 rule 6 destination port '1900,1901,1902'
-set firewall name unifi-frontend-910-seccam-610 rule 6 protocol 'udp'
-set firewall name unifi-frontend-910-seccam-610 rule 6 source group address-group 'sonos_players'
-
-# From seccam-610 to unifi-frontend-910 
-set firewall name seccam-610-unifi-frontend-910 default-action 'drop'
-set firewall name seccam-610-unifi-frontend-910 description 'From unifi-frontend-910 to seccam-610'
-set firewall name seccam-610-unifi-frontend-910 enable-default-log
-set firewall name seccam-610-unifi-frontend-910 rule 1 action 'accept'
-set firewall name seccam-610-unifi-frontend-910 rule 1 description 'Rule: accept_dhcp'
-set firewall name seccam-610-unifi-frontend-910 rule 1 destination port '67,68'
-set firewall name seccam-610-unifi-frontend-910 rule 1 protocol 'udp'
-set firewall name seccam-610-unifi-frontend-910 rule 1 source port '67,68'
 
 # From GUEST to IOT
 # set firewall name guest-iot default-action 'drop'

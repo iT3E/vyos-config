@@ -1,6 +1,6 @@
 ---
 creation_rules:
-  - path_regex: .*\.sops\.env
+  - path_regex: .*\.sops\.ya?ml
     # Personal, VyOS
     age: >-
       age1mzxwncaj0364q8jxfj0y73ptt63czwxucf9lrnn28c7kwyr5wfdsj9gsk2

@@ -6,7 +6,6 @@ set firewall state-policy invalid action 'drop'
 set firewall state-policy related action 'accept'
 
 # Address Groups
-
 set firewall group address-group 3d_printer_controllers address '10.1.3.56'
 
 set firewall group address-group wyze_cameras address '10.10.91.158'
@@ -39,7 +38,7 @@ set firewall group address-group windows_bastion address '10.10.40.240'
 
 set firewall group address-group unifi-udmpro address '10.10.90.1'
 
-# # Port groups
+# Port groups
 set firewall group port-group ad_auth_ports port '389'
 set firewall group port-group ad_auth_ports port '53'
 set firewall group port-group ad_auth_ports port '3268'
