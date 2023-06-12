@@ -43,12 +43,48 @@ set service dhcp-server shared-network-name iLO-550 subnet 10.10.55.0/24 name-se
 set service dhcp-server shared-network-name iLO-550 subnet 10.10.55.0/24 range 0 start '10.10.55.100'
 set service dhcp-server shared-network-name iLO-550 subnet 10.10.55.0/24 range 0 stop '10.10.55.200'
 
-set service dhcp-server shared-network-name iLO-550 subnet 10.10.60.0/24 static-mapping sce-pve02-ilo ip-address '10.10.55.100'
-set service dhcp-server shared-network-name iLO-550 subnet 10.10.60.0/24 static-mapping sce-pve02-ilo mac-address '2c:59:e5:3b:84:9c'
-set service dhcp-server shared-network-name iLO-550 subnet 10.10.60.0/24 static-mapping sce-pve03-ilo ip-address '10.10.55.101'
-set service dhcp-server shared-network-name iLO-550 subnet 10.10.60.0/24 static-mapping sce-pve03-ilo mac-address 'ac:16:2d:be:93:22'
-set service dhcp-server shared-network-name iLO-550 subnet 10.10.60.0/24 static-mapping sce-pve01-ilo ip-address '10.10.55.102'
-set service dhcp-server shared-network-name iLO-550 subnet 10.10.60.0/24 static-mapping sce-pve01-ilo mac-address 'a4:5d:36:fb:15:56'
+set service dhcp-server shared-network-name iLO-550 subnet 10.10.55.0/24 static-mapping sce-pve02-ilo ip-address '10.10.55.100'
+set service dhcp-server shared-network-name iLO-550 subnet 10.10.55.0/24 static-mapping sce-pve02-ilo mac-address '2c:59:e5:3b:84:9c'
+set service dhcp-server shared-network-name iLO-550 subnet 10.10.55.0/24 static-mapping sce-pve03-ilo ip-address '10.10.55.101'
+set service dhcp-server shared-network-name iLO-550 subnet 10.10.55.0/24 static-mapping sce-pve03-ilo mac-address 'ac:16:2d:be:93:22'
+set service dhcp-server shared-network-name iLO-550 subnet 10.10.55.0/24 static-mapping sce-pve01-ilo ip-address '10.10.55.102'
+set service dhcp-server shared-network-name iLO-550 subnet 10.10.55.0/24 static-mapping sce-pve01-ilo mac-address 'a4:5d:36:fb:15:56'
+
+# app-720
+set service dhcp-server shared-network-name app-720 authoritative
+set service dhcp-server shared-network-name app-720 ping-check
+set service dhcp-server shared-network-name app-720 subnet 10.10.72.0/24 default-router '10.10.72.1'
+set service dhcp-server shared-network-name app-720 subnet 10.10.72.0/24 lease '86400'
+set service dhcp-server shared-network-name app-720 subnet 10.10.72.0/24 name-server '10.10.53.4'
+set service dhcp-server shared-network-name app-720 subnet 10.10.72.0/24 range 0 start '10.10.72.100'
+set service dhcp-server shared-network-name app-720 subnet 10.10.72.0/24 range 0 stop '10.10.72.200'
+
+# bastion-410
+set service dhcp-server shared-network-name bastion-410 authoritative
+set service dhcp-server shared-network-name bastion-410 ping-check
+set service dhcp-server shared-network-name bastion-410 subnet 10.10.40.0/24 default-router '10.10.40.1'
+set service dhcp-server shared-network-name bastion-410 subnet 10.10.40.0/24 lease '86400'
+set service dhcp-server shared-network-name bastion-410 subnet 10.10.40.0/24 name-server '10.10.53.4'
+set service dhcp-server shared-network-name bastion-410 subnet 10.10.40.0/24 range 0 start '10.10.40.100'
+set service dhcp-server shared-network-name bastion-410 subnet 10.10.40.0/24 range 0 stop '10.10.40.200'
+
+# k8s-120
+set service dhcp-server shared-network-name k8s-120 authoritative
+set service dhcp-server shared-network-name k8s-120 ping-check
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 default-router '10.10.120.1'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 lease '86400'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 name-server '10.10.53.4'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 range 0 start '10.10.120.100'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 range 0 stop '10.10.120.200'
+
+# UISP-140
+set service dhcp-server shared-network-name UISP-140 authoritative
+set service dhcp-server shared-network-name UISP-140 ping-check
+set service dhcp-server shared-network-name UISP-140 subnet 10.10.140.0/24 default-router '10.10.140.1'
+set service dhcp-server shared-network-name UISP-140 subnet 10.10.140.0/24 lease '86400'
+set service dhcp-server shared-network-name UISP-140 subnet 10.10.140.0/24 name-server '10.10.53.4'
+set service dhcp-server shared-network-name UISP-140 subnet 10.10.140.0/24 range 0 start '10.10.140.100'
+set service dhcp-server shared-network-name UISP-140 subnet 10.10.140.0/24 range 0 stop '10.10.140.200'
 
 # # Guest VLAN
 # set service dhcp-server shared-network-name GUEST authoritative
