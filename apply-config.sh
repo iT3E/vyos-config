@@ -20,11 +20,11 @@ while getopts "d" options; do
 done
 
 # Load secrets into ENV vars
-if [ -f "/config/secrets.sops.env" ]; then
+if [ -f "/config/secrets.sops.yaml" ]; then
   export SOPS_AGE_KEY_FILE=/config/secrets/age.key
 
   mapfile environmentAsArray < <(
-    sops --decrypt "/config/secrets.sops.env" \
+    sops --decrypt "/config/secrets.sops.yaml" \
       | grep --invert-match '^#' \
         | grep --invert-match '^\s*$'
   ) # Uses grep to remove commented and blank lines
