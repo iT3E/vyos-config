@@ -289,6 +289,8 @@ set firewall name seccam-610-ad-110 rule 1 action 'accept'
 set firewall name seccam-610-ad-110 rule 1 source group address-group 'blue_iris'
 set firewall name seccam-610-ad-110 rule 1 destination group address-group 'domain_controllers'
 set firewall name seccam-610-ad-110 rule 1 destination group port-group 'ad_auth_ports'
+set firewall name seccam-610-ad-110 rule 1 protocol 'tcp_udp'
+
 
 # FROM seccam-610 TO bastion-410
 set firewall name seccam-610-bastion-410 default-action 'drop'
@@ -304,6 +306,7 @@ set firewall name seccam-610-app-720 rule 1 description 'Rule: mosquitto_mqtt'
 set firewall name seccam-610-app-720 rule 1 source group address-group 'blue_iris'
 set firewall name seccam-610-app-720 rule 1 destination group address-group 'hass'
 set firewall name seccam-610-app-720 rule 1 destination port '1883'
+set firewall name seccam-610-app-720 rule 1 protocol 'tcp_udp'
 
 # FROM UISP-140 TO unifi-mgmt-900
 set firewall name UISP-140-unifi-mgmt-900 default-action 'drop'
@@ -477,9 +480,11 @@ set firewall name bastion-410-seccam-610 enable-default-log
 set firewall name bastion-410-seccam-610 rule 1 action 'accept'
 set firewall name bastion-410-seccam-610 rule 1 source group address-group 'windows_bastion'
 set firewall name bastion-410-seccam-610 rule 1 destination group port-group 'powershell_remoting'
+set firewall name bastion-410-seccam-610 rule 1 protocol 'tcp_udp'
 set firewall name bastion-410-seccam-610 rule 2 action 'accept'
 set firewall name bastion-410-seccam-610 rule 2 source group address-group 'windows_bastion'
 set firewall name bastion-410-seccam-610 rule 2 destination port '3389'
+set firewall name bastion-410-seccam-610 rule 2 protocol 'tcp'
 
 # FROM bastion-410 TO UISP-140
 set firewall name bastion-410-UISP-140 default-action 'drop'
@@ -493,12 +498,15 @@ set firewall name bastion-410-ad-110 enable-default-log
 set firewall name bastion-410-ad-110 rule 1 action 'accept'
 set firewall name bastion-410-ad-110 rule 1 source group address-group 'windows_bastion'
 set firewall name bastion-410-ad-110 rule 1 destination group port-group 'ad_auth_ports'
+set firewall name bastion-410-ad-110 rule 1 protocol 'tcp_udp'
 set firewall name bastion-410-ad-110 rule 2 action 'accept'
 set firewall name bastion-410-ad-110 rule 2 source group address-group 'windows_bastion'
 set firewall name bastion-410-ad-110 rule 2 destination port '3389'
+set firewall name bastion-410-ad-110 rule 2 protocol 'tcp'
 set firewall name bastion-410-ad-110 rule 3 action 'accept'
 set firewall name bastion-410-ad-110 rule 3 source group address-group 'windows_bastion'
 set firewall name bastion-410-ad-110 rule 3 destination group port-group 'powershell_remoting'
+set firewall name bastion-410-ad-110 rule 3 protocol 'tcp_udp'
 
 # FROM bastion-410 TO app-720
 set firewall name bastion-410-app-720 default-action 'drop'
@@ -514,6 +522,7 @@ set firewall name app-720-unifi-mgmt-900 rule 1 description 'Rule: hass_to_unifi
 set firewall name app-720-unifi-mgmt-900 rule 1 source group address-group 'hass'
 set firewall name app-720-unifi-mgmt-900 rule 1 destination group address-group 'unifi-udmpro'
 set firewall name app-720-unifi-mgmt-900 rule 1 destination port '80,443'
+set firewall name app-720-unifi-mgmt-900 rule 1 protocol 'tcp_udp'
 
 # FROM app-720 TO unifi-frontend-910
 set firewall name app-720-unifi-frontend-910 default-action 'drop'
@@ -567,10 +576,6 @@ set firewall name app-720-bastion-410 enable-default-log
 #FROM bastion-410 TO transit-10
 set firewall name bastion-410-transit-10 default-action 'accept'
 set firewall name bastion-410-transit-10 description 'From bastion-410 to transit-10'
-
-#FROM app-720 TO transit-10
-set firewall name app-720-transit-10 default-action 'accept'
-set firewall name app-720-transit-10 description 'From app-720 to transit-10'
 
 #FROM k8s-120 TO transit-10
 set firewall name app-720-transit-10 default-action 'accept'
