@@ -252,7 +252,7 @@ set firewall name seccam-610-unifi-frontend-910 description 'From seccam-610 to 
 set firewall name seccam-610-unifi-frontend-910 enable-default-log
 set firewall name seccam-610-unifi-frontend-910 rule 1 action 'accept'
 set firewall name seccam-610-unifi-frontend-910 rule 1 source group address-group 'blue_iris'
-set firewall name seccam-610-unifi-frontend-910 rule 1 destination group address-group 'wyze_cams'
+set firewall name seccam-610-unifi-frontend-910 rule 1 destination group address-group 'wyze_cameras'
 
 # FROM seccam-610 TO k8s-120
 set firewall name seccam-610-k8s-120 default-action 'drop'

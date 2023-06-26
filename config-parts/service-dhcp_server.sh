@@ -30,7 +30,7 @@ set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 stat
 set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping RLC-410 ip-address '10.10.60.33'
 set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping RLC-410 mac-address 'ec:71:db:ee:71:40'
 set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping sv3c01 ip-address '10.10.60.34'
-set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping sv3c01 mac-address '	c0:99:60:d6:3e:bc'
+set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping sv3c01 mac-address 'c0:99:60:d6:3e:bc'
 set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping sv3c02 ip-address '10.10.60.35'
 set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping sv3c02 mac-address 'c0:99:2f:62:9a:ab'
 
