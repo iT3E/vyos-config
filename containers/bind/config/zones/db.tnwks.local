@@ -5,7 +5,7 @@
 $TTL 3600
 $ORIGIN tnwks.local.
 @ 3600 IN SOA sce-vyos01.tnwks.local. sce-vyos01.tnwks.local. (
-  1682790096         ; serial number (epoch timestamp)
+  1687802988         ; serial number (epoch timestamp)
   7200               ; refresh period
   3600               ; retry period
   1209600            ; expire time
