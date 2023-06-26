@@ -13,7 +13,7 @@ $ORIGIN tnwks.local.
 )
 
 ; NS Records
-@                             IN  NS sce-vyos01.tnwks.local
+@                             IN  NS sce-vyos01.tnwks.local.
 
 
 ;unifi-mgmt-900
