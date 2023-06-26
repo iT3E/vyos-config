@@ -578,6 +578,10 @@ set firewall name bastion-410-transit-10 default-action 'accept'
 set firewall name bastion-410-transit-10 description 'From bastion-410 to transit-10'
 
 #FROM k8s-120 TO transit-10
+set firewall name k8s-120-transit-10 default-action 'accept'
+set firewall name k8s-120-transit-10 description 'From k8s-120 to transit-10'
+
+#FROM app-720 TO transit-10
 set firewall name app-720-transit-10 default-action 'accept'
 set firewall name app-720-transit-10 description 'From app-720 to transit-10'
 
