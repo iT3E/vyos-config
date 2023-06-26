@@ -157,6 +157,18 @@ set firewall zone vpn from bastion-410 firewall name 'bastion-410-vpn'
 set firewall zone vpn from app-720 firewall name 'app-720-vpn'
 set firewall zone vpn interface 'wg01'
 
+# set firewall zone containers default-action 'drop'
+# set firewall zone containers description 'VyOS containers zone'
+# set firewall zone containers from guest firewall name 'guest-containers'
+# set firewall zone containers from iot firewall name 'iot-containers'
+# set firewall zone containers from lan firewall name 'lan-containers'
+# set firewall zone containers from local firewall name 'local-containers'
+# set firewall zone containers from servers firewall name 'servers-containers'
+# set firewall zone containers from trusted firewall name 'trusted-containers'
+# set firewall zone containers from video firewall name 'video-containers'
+# set firewall zone containers from wan firewall name 'wan-containers'
+# set firewall zone containers interface 'pod-containers'
+
 ###########
 # set firewall zone guest default-action 'drop'
 # set firewall zone guest from iot firewall name 'iot-guest'
