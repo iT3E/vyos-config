@@ -12,3 +12,6 @@
 # set protocols bgp neighbor 10.1.1.33 remote-as '64512'
 # set protocols bgp parameters router-id '10.1.0.1'
 # set protocols bgp system-as '64512'
+
+# Static Routes
+set protocols static route 0.0.0.0/0 next-hop 172.16.1.1
