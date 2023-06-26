@@ -615,9 +615,9 @@ set firewall name vpn-unifi-mgmt-900 description 'From vpn to unifi-mgmt-900'
 set firewall name vpn-unifi-frontend-910 default-action 'accept'
 set firewall name vpn-unifi-frontend-910 description 'From vpn to unifi-frontend-910'
 
-#FROM vpn TO ilo-550
-set firewall name vpn-ilo-550 default-action 'accept'
-set firewall name vpn-ilo-550 description 'From vpn to ilo-550'
+#FROM vpn TO iLO-550
+set firewall name vpn-iLO-550 default-action 'accept'
+set firewall name vpn-iLO-550 description 'From vpn to iLO-550'
 
 #FROM vpn TO pve-11
 set firewall name vpn-pve-11 default-action 'accept'
