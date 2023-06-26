@@ -4,7 +4,7 @@
 ; SOA Records
 $TTL 3600
 $ORIGIN tnwks.local.
-@ 3600 IN SOA gateway.bjw-s.tech. gateway.bjw-s.tech. (
+@ 3600 IN SOA sce-vyos01.tnwks.local. sce-vyos01.tnwks.local. (
   1682790096         ; serial number (epoch timestamp)
   7200               ; refresh period
   3600               ; retry period
@@ -16,17 +16,17 @@ $ORIGIN tnwks.local.
 @                             IN  NS sce-vyos01.tnwks.local
 
 
-#unifi-mgmt-900
-#unifi-frontend-910
-#k8s-120
-#iLO-550
-#pve-11
-#seccam-610
-#UISP-140
-#transit-10
-#ad-110
-#bastion-410
-#app-720
+;unifi-mgmt-900
+;unifi-frontend-910
+;k8s-120
+;iLO-550
+;pve-11
+;seccam-610
+;UISP-140
+;transit-10
+;ad-110
+;bastion-410
+;app-720
 
 ; transit-10
 sce-vyos01                    IN  A  172.16.1.254
