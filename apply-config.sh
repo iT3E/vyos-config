@@ -29,7 +29,9 @@ if [ -f "/config/secrets.sops.yaml" ]; then
         | grep --invert-match '^\s*$'
   ) # Uses grep to remove commented and blank lines
   for variableDeclaration in "${environmentAsArray[@]}"; do
-    export "${variableDeclaration//[$'\r\n']}" # The substitution removes the line breaks
+    var=$(echo "${variableDeclaration//[$'\r\n']}" | cut -d ':' -f 1 | xargs)  # Remove trailing whitespace
+    val=$(echo "${variableDeclaration//[$'\r\n']}" | cut -d ':' -f 2- | xargs) # Remove leading whitespace
+    export "${var}=${val}"
   done
 fi
 
