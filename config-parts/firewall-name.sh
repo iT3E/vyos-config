@@ -61,6 +61,19 @@ set firewall name unifi-mgmt-900-app-720 default-action 'drop'
 set firewall name unifi-mgmt-900-app-720 description 'From unifi-mgmt-900 to app-720'
 set firewall name unifi-mgmt-900-app-720 enable-default-log
 
+# From unifi-mgmt-900 TO containers
+set firewall name unifi-mgmt-900-containers default-action 'drop'
+set firewall name unifi-mgmt-900-containers description 'From unifi-mgmt-900 to containers'
+set firewall name unifi-mgmt-900-containers enable-default-log
+set firewall name unifi-mgmt-900-containers rule 1 action 'accept'
+set firewall name unifi-mgmt-900-containers rule 1 description 'Rule: accept_dns'
+set firewall name unifi-mgmt-900-containers rule 1 destination port 'domain,domain-s'
+set firewall name unifi-mgmt-900-containers rule 1 protocol 'tcp_udp'
+
+
+
+
+
 # FROM unifi-frontend-910 TO unifi-mgmt-900
 set firewall name unifi-frontend-910-unifi-mgmt-900 default-action 'drop'
 set firewall name unifi-frontend-910-unifi-mgmt-900 description 'From unifi-frontend-910 to unifi-mgmt-900'
@@ -105,6 +118,19 @@ set firewall name unifi-frontend-910-bastion-410 enable-default-log
 set firewall name unifi-frontend-910-app-720 default-action 'drop'
 set firewall name unifi-frontend-910-app-720 description 'From unifi-frontend-910 to app-720'
 set firewall name unifi-frontend-910-app-720 enable-default-log
+
+# From unifi-frontend-910TO containers
+set firewall name unifi-frontend-910-containers default-action 'drop'
+set firewall name unifi-frontend-910-containers description 'From unifi-frontend-910 to containers'
+set firewall name unifi-frontend-910-containers enable-default-log
+set firewall name unifi-frontend-910-containers rule 1 action 'accept'
+set firewall name unifi-frontend-910-containers rule 1 description 'Rule: accept_dns'
+set firewall name unifi-frontend-910-containers rule 1 destination port 'domain,domain-s'
+set firewall name unifi-frontend-910-containers rule 1 protocol 'tcp_udp'
+
+
+
+
 
 # FROM k8s-120 TO unifi-mgmt-900
 set firewall name k8s-120-unifi-mgmt-900 default-action 'drop'
@@ -151,6 +177,18 @@ set firewall name k8s-120-app-720 default-action 'drop'
 set firewall name k8s-120-app-720 description 'From k8s-120 to app-720'
 set firewall name k8s-120-app-720 enable-default-log
 
+# From k8s-120 TO containers
+set firewall name k8s-120-containers default-action 'drop'
+set firewall name k8s-120-containers description 'From GUEST to containers'
+set firewall name k8s-120-containers enable-default-log
+set firewall name k8s-120-containers rule 1 action 'accept'
+set firewall name k8s-120-containers rule 1 description 'Rule: accept_dns'
+set firewall name k8s-120-containers rule 1 destination port 'domain,domain-s'
+set firewall name k8s-120-containers rule 1 protocol 'tcp_udp'
+
+
+
+
 # FROM iLO-550 TO unifi-mgmt-900
 set firewall name iLO-550-unifi-mgmt-900 default-action 'drop'
 set firewall name iLO-550-unifi-mgmt-900 description 'From iLO-550 to unifi-mgmt-900'
@@ -196,6 +234,18 @@ set firewall name iLO-550-app-720 default-action 'drop'
 set firewall name iLO-550-app-720 description 'From iLO-550 to app-720'
 set firewall name iLO-550-app-720 enable-default-log
 
+# From iLO-550 TO containers
+set firewall name iLO-550-containers default-action 'drop'
+set firewall name iLO-550-containers description 'From iLO-550 to containers'
+set firewall name iLO-550-containers enable-default-log
+set firewall name iLO-550-containers rule 1 action 'accept'
+set firewall name iLO-550-containers rule 1 description 'Rule: accept_dns'
+set firewall name iLO-550-containers rule 1 destination port 'domain,domain-s'
+set firewall name iLO-550-containers rule 1 protocol 'tcp_udp'
+
+
+
+
 # FROM pve-11 TO unifi-mgmt-900
 set firewall name pve-11-unifi-mgmt-900 default-action 'drop'
 set firewall name pve-11-unifi-mgmt-900 description 'From pve-11 to unifi-mgmt-900'
@@ -240,6 +290,18 @@ set firewall name pve-11-bastion-410 enable-default-log
 set firewall name pve-11-app-720 default-action 'drop'
 set firewall name pve-11-app-720 description 'From pve-11 to app-720'
 set firewall name pve-11-app-720 enable-default-log
+
+# From pve-11 TO containers
+set firewall name pve-11-containers default-action 'drop'
+set firewall name pve-11-containers description 'From pve-11 to containers'
+set firewall name pve-11-containers enable-default-log
+set firewall name pve-11-containers rule 1 action 'accept'
+set firewall name pve-11-containers rule 1 description 'Rule: accept_dns'
+set firewall name pve-11-containers rule 1 destination port 'domain,domain-s'
+set firewall name pve-11-containers rule 1 protocol 'tcp_udp'
+
+
+
 
 # FROM seccam-610 TO unifi-mgmt-900
 set firewall name seccam-610-unifi-mgmt-900 default-action 'drop'
@@ -291,7 +353,6 @@ set firewall name seccam-610-ad-110 rule 1 destination group address-group 'doma
 set firewall name seccam-610-ad-110 rule 1 destination group port-group 'ad_auth_ports'
 set firewall name seccam-610-ad-110 rule 1 protocol 'tcp_udp'
 
-
 # FROM seccam-610 TO bastion-410
 set firewall name seccam-610-bastion-410 default-action 'drop'
 set firewall name seccam-610-bastion-410 description 'From seccam-610 to bastion-410'
@@ -307,6 +368,17 @@ set firewall name seccam-610-app-720 rule 1 source group address-group 'blue_iri
 set firewall name seccam-610-app-720 rule 1 destination group address-group 'hass'
 set firewall name seccam-610-app-720 rule 1 destination port '1883'
 set firewall name seccam-610-app-720 rule 1 protocol 'tcp_udp'
+
+# From seccam-610 TO containers
+set firewall name seccam-610-containers default-action 'drop'
+set firewall name seccam-610-containers description 'From seccam-610 to containers'
+set firewall name seccam-610-containers enable-default-log
+set firewall name seccam-610-containers rule 1 action 'accept'
+set firewall name seccam-610-containers rule 1 description 'Rule: accept_dns'
+set firewall name seccam-610-containers rule 1 destination port 'domain,domain-s'
+set firewall name seccam-610-containers rule 1 protocol 'tcp_udp'
+
+
 
 # FROM UISP-140 TO unifi-mgmt-900
 set firewall name UISP-140-unifi-mgmt-900 default-action 'drop'
@@ -352,6 +424,16 @@ set firewall name UISP-140-bastion-410 enable-default-log
 set firewall name UISP-140-app-720 default-action 'drop'
 set firewall name UISP-140-app-720 description 'From UISP-140 to app-720'
 set firewall name UISP-140-app-720 enable-default-log
+
+# From UISP-140 TO containers
+set firewall name UISP-140-containers default-action 'drop'
+set firewall name UISP-140-containers description 'From UISP-140 to containers'
+set firewall name UISP-140-containers enable-default-log
+set firewall name UISP-140-containers rule 1 action 'accept'
+set firewall name UISP-140-containers rule 1 description 'Rule: accept_dns'
+set firewall name UISP-140-containers rule 1 destination port 'domain,domain-s'
+set firewall name UISP-140-containers rule 1 protocol 'tcp_udp'
+
 
 # FROM transit-10 TO unifi-mgmt-900
 set firewall name transit-10-unifi-mgmt-900 default-action 'drop'
@@ -403,6 +485,16 @@ set firewall name transit-10-app-720 default-action 'drop'
 set firewall name transit-10-app-720 description 'From transit-10 to app-720'
 set firewall name transit-10-app-720 enable-default-log
 
+# From transit-10 TO containers
+set firewall name transit-10-containers default-action 'drop'
+set firewall name transit-10-containers description 'From transit-10 to containers'
+set firewall name transit-10-containers enable-default-log
+set firewall name transit-10-containers rule 1 action 'accept'
+set firewall name transit-10-containers rule 1 description 'Rule: accept_dns'
+set firewall name transit-10-containers rule 1 destination port 'domain,domain-s'
+set firewall name transit-10-containers rule 1 protocol 'tcp_udp'
+
+
 # FROM ad-110 TO unifi-mgmt-900
 set firewall name ad-110-unifi-mgmt-900 default-action 'drop'
 set firewall name ad-110-unifi-mgmt-900 description 'From ad-110 to unifi-mgmt-900'
@@ -447,6 +539,17 @@ set firewall name ad-110-bastion-410 enable-default-log
 set firewall name ad-110-app-720 default-action 'drop'
 set firewall name ad-110-app-720 description 'From ad-110 to app-720'
 set firewall name ad-110-app-720 enable-default-log
+
+# From ad-110 TO containers
+set firewall name ad-110-containers default-action 'drop'
+set firewall name ad-110-containers description 'From ad-110 to containers'
+set firewall name ad-110-containers enable-default-log
+set firewall name ad-110-containers rule 1 action 'accept'
+set firewall name ad-110-containers rule 1 description 'Rule: accept_dns'
+set firewall name ad-110-containers rule 1 destination port 'domain,domain-s'
+set firewall name ad-110-containers rule 1 protocol 'tcp_udp'
+
+
 
 # FROM bastion-410 TO unifi-mgmt-900
 set firewall name bastion-410-unifi-mgmt-900 default-action 'drop'
@@ -513,6 +616,17 @@ set firewall name bastion-410-app-720 default-action 'drop'
 set firewall name bastion-410-app-720 description 'From bastion-410 to app-720'
 set firewall name bastion-410-app-720 enable-default-log
 
+# From bastion-410 TO containers
+set firewall name bastion-410-containers default-action 'drop'
+set firewall name bastion-410-containers description 'From bastion-410 to containers'
+set firewall name bastion-410-containers enable-default-log
+set firewall name bastion-410-containers rule 1 action 'accept'
+set firewall name bastion-410-containers rule 1 description 'Rule: accept_dns'
+set firewall name bastion-410-containers rule 1 destination port 'domain,domain-s'
+set firewall name bastion-410-containers rule 1 protocol 'tcp_udp'
+
+
+
 # FROM app-720 TO unifi-mgmt-900
 set firewall name app-720-unifi-mgmt-900 default-action 'drop'
 set firewall name app-720-unifi-mgmt-900 description 'From app-720 to unifi-mgmt-900'
@@ -567,6 +681,16 @@ set firewall name app-720-bastion-410 default-action 'drop'
 set firewall name app-720-bastion-410 description 'From app-720 to bastion-410'
 set firewall name app-720-bastion-410 enable-default-log
 
+# From app-720 TO containers
+set firewall name app-720-containers default-action 'drop'
+set firewall name app-720-containers description 'From app-720 to containers'
+set firewall name app-720-containers enable-default-log
+set firewall name app-720-containers rule 1 action 'accept'
+set firewall name app-720-containers rule 1 description 'Rule: accept_dns'
+set firewall name app-720-containers rule 1 destination port 'domain,domain-s'
+set firewall name app-720-containers rule 1 protocol 'tcp_udp'
+
+
 #######################
 ##                   ##
 ##  Internet Access  ##
@@ -605,6 +729,15 @@ set firewall name unifi-mgmt-900-transit-10 description 'From unifi-mgmt-900 to 
 set firewall name unifi-frontend-910-transit-10 default-action 'accept'
 set firewall name unifi-frontend-910-transit-10 description 'From unifi-frontend-910 to transit-10'
 
+#FROM vpn TO transit-10
+set firewall name vpn-transit-10 default-action 'accept'
+set firewall name vpn-transit-10 description 'From vpn to transit-10'
+
+#FROM containers TO transit-10
+set firewall name containers-transit-10 default-action 'accept'
+set firewall name containers-transit-10 description 'From containers to transit-10'
+
+
 ##################################
 ##                              ##
 ## MFA VPN access to everything ##
@@ -634,10 +767,6 @@ set firewall name vpn-seccam-610 description 'From vpn to seccam-610'
 #FROM vpn TO UISP-140
 set firewall name vpn-UISP-140 default-action 'accept'
 set firewall name vpn-UISP-140 description 'From vpn to UISP-140'
-
-#FROM vpn TO transit-10
-set firewall name vpn-transit-10 default-action 'accept'
-set firewall name vpn-transit-10 description 'From vpn to transit-10'
 
 #FROM vpn TO ad-110
 set firewall name vpn-ad-110 default-action 'accept'

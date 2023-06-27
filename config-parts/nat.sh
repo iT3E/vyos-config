@@ -46,13 +46,13 @@ set nat destination rule 112 translation address '10.10.120.1'
 set nat destination rule 112 translation port '123'
 
 # iLO-550 - 10.10.55.1/24
-# set nat destination rule 113 description 'Force NTP for iLO-550'
-# set nat destination rule 113 destination address '!10.10.55.1'
-# set nat destination rule 113 destination port '123'
-# set nat destination rule 113 inbound-interface 'eth0.550'
-# set nat destination rule 113 protocol 'udp'
-# set nat destination rule 113 translation address '10.10.55.1'
-# set nat destination rule 113 translation port '123'
+set nat destination rule 113 description 'Force NTP for iLO-550'
+set nat destination rule 113 destination address '!10.10.55.1'
+set nat destination rule 113 destination port '123'
+set nat destination rule 113 inbound-interface 'eth0.550'
+set nat destination rule 113 protocol 'udp'
+set nat destination rule 113 translation address '10.10.55.1'
+set nat destination rule 113 translation port '123'
 
 # pve-11 - 10.10.11.1/24
 # set nat destination rule 114 description 'Force NTP for pve-11'
