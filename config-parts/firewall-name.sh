@@ -610,6 +610,10 @@ set firewall name bastion-410-ad-110 rule 3 action 'accept'
 set firewall name bastion-410-ad-110 rule 3 source group address-group 'windows_bastion'
 set firewall name bastion-410-ad-110 rule 3 destination group port-group 'powershell_remoting'
 set firewall name bastion-410-ad-110 rule 3 protocol 'tcp_udp'
+set firewall name bastion-410-ad-110 rule 4 action 'accept'
+set firewall name bastion-410-ad-110 rule 4 source group address-group 'freenas'
+set firewall name bastion-410-ad-110 rule 4 destination group port-group 'ad_auth_ports'
+set firewall name bastion-410-ad-110 rule 4 protocol 'tcp_udp'
 
 # FROM bastion-410 TO app-720
 set firewall name bastion-410-app-720 default-action 'drop'

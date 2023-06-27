@@ -10,6 +10,7 @@
 # set nat destination rule 102 translation port '53'
 
 set nat destination rule 103 description 'Force DNS for seccam-610'
+set nat destination rule 103 source address '!10.10.60.210'
 set nat destination rule 103 destination address '!10.10.53.4'
 set nat destination rule 103 destination port '53'
 set nat destination rule 103 inbound-interface 'eth0.610'
