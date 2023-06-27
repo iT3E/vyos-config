@@ -9,13 +9,13 @@
 # set nat destination rule 102 translation address '10.10.53.4'
 # set nat destination rule 102 translation port '53'
 
-# set nat destination rule 103 description 'Force DNS for seccam-610'
-# set nat destination rule 103 destination address '!10.10.53.4'
-# set nat destination rule 103 destination port '53'
-# set nat destination rule 103 inbound-interface 'eth0.610'
-# set nat destination rule 103 protocol 'tcp_udp'
-# set nat destination rule 103 translation address '10.10.53.4'
-# set nat destination rule 103 translation port '53'
+set nat destination rule 103 description 'Force DNS for seccam-610'
+set nat destination rule 103 destination address '!10.10.53.4'
+set nat destination rule 103 destination port '53'
+set nat destination rule 103 inbound-interface 'eth0.610'
+set nat destination rule 103 protocol 'tcp_udp'
+set nat destination rule 103 translation address '10.10.53.4'
+set nat destination rule 103 translation port '53'
 
 # Force NTP
 # unifi-mgmt-900 - 10.10.90.1/24
@@ -63,14 +63,14 @@ set nat destination rule 113 translation port '123'
 # set nat destination rule 114 translation address '10.10.11.1'
 # set nat destination rule 114 translation port '123'
 
-# # seccam-610 - 10.10.60.1/24
-# set nat destination rule 115 description 'Force NTP for seccam-610'
-# set nat destination rule 115 destination address '!10.10.60.1'
-# set nat destination rule 115 destination port '123'
-# set nat destination rule 115 inbound-interface 'eth0.610'
-# set nat destination rule 115 protocol 'udp'
-# set nat destination rule 115 translation address '10.10.60.1'
-# set nat destination rule 115 translation port '123'
+# seccam-610 - 10.10.60.1/24
+set nat destination rule 115 description 'Force NTP for seccam-610'
+set nat destination rule 115 destination address '!10.10.60.1'
+set nat destination rule 115 destination port '123'
+set nat destination rule 115 inbound-interface 'eth0.610'
+set nat destination rule 115 protocol 'udp'
+set nat destination rule 115 translation address '10.10.60.1'
+set nat destination rule 115 translation port '123'
 
 # UISP-140 - 10.10.140.1/24
 set nat destination rule 116 description 'Force NTP for UISP-140'
