@@ -640,9 +640,9 @@ set firewall name app-720-unifi-mgmt-900 default-action 'drop'
 set firewall name app-720-unifi-mgmt-900 description 'From app-720 to unifi-mgmt-900'
 set firewall name app-720-unifi-mgmt-900 enable-default-log
 set firewall name app-720-unifi-mgmt-900 rule 1 action 'accept'
-set firewall name app-720-unifi-mgmt-900 rule 1 description 'Rule: hass_to_unifi-udmpro'
+set firewall name app-720-unifi-mgmt-900 rule 1 description 'Rule: hass_to_udmpro'
 set firewall name app-720-unifi-mgmt-900 rule 1 source group address-group 'hass'
-set firewall name app-720-unifi-mgmt-900 rule 1 destination group address-group 'unifi-udmpro'
+set firewall name app-720-unifi-mgmt-900 rule 1 destination group address-group 'udmpro'
 set firewall name app-720-unifi-mgmt-900 rule 1 destination port '80,443'
 set firewall name app-720-unifi-mgmt-900 rule 1 protocol 'tcp_udp'
 
