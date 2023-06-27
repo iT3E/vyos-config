@@ -784,6 +784,10 @@ set firewall name vpn-app-720 description 'From vpn to app-720'
 set firewall name vpn-k8s-120 default-action 'accept'
 set firewall name vpn-k8s-120 description 'From vpn to k8s-120'
 
+#FROM vpn TO containers
+set firewall name vpn-containers default-action 'accept'
+set firewall name vpn-containers description 'From vpn to containers'
+
 
 #################
 #################
