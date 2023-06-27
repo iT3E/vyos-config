@@ -9,8 +9,6 @@
 cd /config/
 sudo git config --global --add safe.directory /config
 sudo git pull
-sudo mkdir -p /tmp/bind/cache
-sudo chown -R 104 /tmp/bind/cache
 ```
 
 Step 5: Remove vlan tag from vnic
