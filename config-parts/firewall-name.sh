@@ -439,6 +439,10 @@ set firewall name UISP-140-containers rule 1 protocol 'tcp_udp'
 set firewall name transit-10-unifi-mgmt-900 default-action 'drop'
 set firewall name transit-10-unifi-mgmt-900 description 'From transit-10 to unifi-mgmt-900'
 set firewall name transit-10-unifi-mgmt-900 enable-default-log
+set firewall name transit-10-unifi-mgmt-900 rule 1 action 'accept'
+set firewall name transit-10-unifi-mgmt-900 rule 1 description 'Rule: allow_udmpro'
+set firewall name transit-10-unifi-mgmt-900 rule 1 source group address-group 'udmpro'
+set firewall name transit-10-unifi-mgmt-900 rule 1 protocol 'tcp_udp'
 
 # FROM transit-10 TO unifi-frontend-910
 set firewall name transit-10-unifi-frontend-910 default-action 'drop'

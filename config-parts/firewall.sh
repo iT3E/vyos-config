@@ -38,7 +38,7 @@ set firewall group address-group windows_bastion address '10.10.40.240'
 
 set firewall group address-group freenas address '10.10.40.10'
 
-set firewall group address-group unifi-udmpro address '10.10.90.1'
+set firewall group address-group udmpro address '172.16.1.1'
 
 # Port groups
 set firewall group port-group ad_auth_ports port '389'

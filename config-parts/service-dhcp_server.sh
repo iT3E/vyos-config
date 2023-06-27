@@ -14,14 +14,33 @@
 #app-720
 #vpn
 
+
+# unifi-mgmt-900
+set service dhcp-server shared-network-name unifi-mgmt-900 authoritative
+set service dhcp-server shared-network-name unifi-mgmt-900 ping-check
+set service dhcp-server shared-network-name unifi-mgmt-900 subnet 10.10.90.0/24 default-router '10.10.90.1'
+set service dhcp-server shared-network-name unifi-mgmt-900 subnet 10.10.90.0/24 lease '86400'
+set service dhcp-server shared-network-name unifi-mgmt-900 subnet 10.10.90.0/24 name-server '10.10.53.4'
+set service dhcp-server shared-network-name unifi-mgmt-900 subnet 10.10.90.0/24 range 0 start '10.10.90.100'
+set service dhcp-server shared-network-name unifi-mgmt-900 subnet 10.10.90.0/24 range 0 stop '10.10.90.200'
+
+# unifi-frontend-910
+set service dhcp-server shared-network-name unifi-frontend-910 authoritative
+set service dhcp-server shared-network-name unifi-frontend-910 ping-check
+set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 default-router '10.10.91.1'
+set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 lease '86400'
+set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 name-server '10.10.53.4'
+set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 range 0 start '10.10.91.100'
+set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 range 0 stop '10.10.91.200'
+
 # seccam-610
 set service dhcp-server shared-network-name seccam-610 authoritative
 set service dhcp-server shared-network-name seccam-610 ping-check
 set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 default-router '10.10.60.1'
 set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 lease '86400'
 set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 name-server '10.10.53.4'
-set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 range 0 start '10.10.60.100'
-set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 range 0 stop '10.10.60.200'
+set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 range 0 start '10.10.60.30'
+set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 range 0 stop '10.10.60.100'
 
 set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping amcrest1 ip-address '10.10.60.31'
 set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping amcrest1 mac-address '9c:8e:cd:0b:48:58'
