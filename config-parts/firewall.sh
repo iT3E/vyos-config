@@ -8,9 +8,9 @@ set firewall state-policy related action 'accept'
 # Address Groups
 set firewall group address-group 3d_printer_controllers address '10.1.3.56'
 
-set firewall group address-group wyze_cameras address '10.10.91.158'
+set firewall group address-group wyze_cameras address '10.10.91.105'
 set firewall group address-group wyze_cameras address '10.10.91.178'
-set firewall group address-group wyze_cameras address '10.10.91.113'
+set firewall group address-group wyze_cameras address '10.10.91.109'
 
 set firewall group address-group security_cameras address '10.10.60.31'
 set firewall group address-group security_cameras address '10.10.60.32'

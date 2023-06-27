@@ -33,6 +33,13 @@ set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0
 set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 range 0 start '10.10.91.100'
 set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 range 0 stop '10.10.91.200'
 
+set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 static-mapping wyze_cam_1 ip-address '10.10.91.105'
+set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 static-mapping wyze_cam_1 mac-address 'd0:3f:27:5c:0c:3f'
+set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 static-mapping wyze_cam_2 ip-address '10.10.91.109'
+set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 static-mapping wyze_cam_2 mac-address 'd0:3f:27:05:55:11'
+set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 static-mapping wyze_cam_3 ip-address '10.10.91.178'
+set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 static-mapping wyze_cam_3 mac-address '2c:aa:8e:1c:47:b9'
+
 # seccam-610
 set service dhcp-server shared-network-name seccam-610 authoritative
 set service dhcp-server shared-network-name seccam-610 ping-check
@@ -52,6 +59,10 @@ set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 stat
 set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping sv3c01 mac-address 'c0:99:60:d6:3e:bc'
 set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping sv3c02 ip-address '10.10.60.35'
 set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping sv3c02 mac-address 'c0:99:2f:62:9a:ab'
+set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping loryta01 ip-address '10.10.60.100'
+set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping loryta01 mac-address '08:ed:ed:03:b4:4e'
+set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping loryta02 ip-address '10.10.60.30'
+set service dhcp-server shared-network-name seccam-610 subnet 10.10.60.0/24 static-mapping loryta02 mac-address '08:ed:ed:5e:8d:8d'
 
 # iLO-550
 set service dhcp-server shared-network-name iLO-550 authoritative
