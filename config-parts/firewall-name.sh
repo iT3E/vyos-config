@@ -631,9 +631,9 @@ set firewall name vpn-pve-11 description 'From vpn to pve-11'
 set firewall name vpn-seccam-610 default-action 'accept'
 set firewall name vpn-seccam-610 description 'From vpn to seccam-610'
 
-#FROM vpn TO uisp-140
-set firewall name vpn-uisp-140 default-action 'accept'
-set firewall name vpn-uisp-140 description 'From vpn to uisp-140'
+#FROM vpn TO UISP-140
+set firewall name vpn-UISP-140 default-action 'accept'
+set firewall name vpn-UISP-140 description 'From vpn to UISP-140'
 
 #FROM vpn TO transit-10
 set firewall name vpn-transit-10 default-action 'accept'
