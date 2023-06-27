@@ -1,13 +1,13 @@
 #!/bin/vbash
 
 # Force DNS
-# set nat destination rule 102 description 'Force DNS for unifi-frontend-910'
-# set nat destination rule 102 destination address '!10.10.53.4'
-# set nat destination rule 102 destination port '53'
-# set nat destination rule 102 inbound-interface 'eth0.910'
-# set nat destination rule 102 protocol 'tcp_udp'
-# set nat destination rule 102 translation address '10.10.53.4'
-# set nat destination rule 102 translation port '53'
+set nat destination rule 102 description 'Force DNS for unifi-frontend-910'
+set nat destination rule 102 destination address '!10.10.53.4'
+set nat destination rule 102 destination port '53'
+set nat destination rule 102 inbound-interface 'eth0.910'
+set nat destination rule 102 protocol 'tcp_udp'
+set nat destination rule 102 translation address '10.10.53.4'
+set nat destination rule 102 translation port '53'
 
 set nat destination rule 103 description 'Force DNS for seccam-610'
 set nat destination rule 103 source address '!10.10.60.210'
@@ -20,22 +20,22 @@ set nat destination rule 103 translation port '53'
 
 # Force NTP
 # unifi-mgmt-900 - 10.10.90.1/24
-# set nat destination rule 110 description 'Force NTP for unifi-mgmt-900'
-# set nat destination rule 110 destination address '!10.10.90.1'
-# set nat destination rule 110 destination port '123'
-# set nat destination rule 110 inbound-interface 'eth0.900'
-# set nat destination rule 110 protocol 'udp'
-# set nat destination rule 110 translation address '10.10.90.1'
-# set nat destination rule 110 translation port '123'
+set nat destination rule 110 description 'Force NTP for unifi-mgmt-900'
+set nat destination rule 110 destination address '!10.10.90.1'
+set nat destination rule 110 destination port '123'
+set nat destination rule 110 inbound-interface 'eth0.900'
+set nat destination rule 110 protocol 'udp'
+set nat destination rule 110 translation address '10.10.90.1'
+set nat destination rule 110 translation port '123'
 
 # unifi-frontend-910 - 10.10.91.1/24
-# set nat destination rule 111 description 'Force NTP for unifi-frontend-910'
-# set nat destination rule 111 destination address '!10.10.91.1'
-# set nat destination rule 111 destination port '123'
-# set nat destination rule 111 inbound-interface 'eth0.910'
-# set nat destination rule 111 protocol 'udp'
-# set nat destination rule 111 translation address '10.10.91.1'
-# set nat destination rule 111 translation port '123'
+set nat destination rule 111 description 'Force NTP for unifi-frontend-910'
+set nat destination rule 111 destination address '!10.10.91.1'
+set nat destination rule 111 destination port '123'
+set nat destination rule 111 inbound-interface 'eth0.910'
+set nat destination rule 111 protocol 'udp'
+set nat destination rule 111 translation address '10.10.91.1'
+set nat destination rule 111 translation port '123'
 
 # k8s-120 - 10.10.120.1/24
 set nat destination rule 112 description 'Force NTP for k8s-120'

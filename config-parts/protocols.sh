@@ -15,5 +15,7 @@
 
 # Static Routes
 set protocols static route 0.0.0.0/0 next-hop 172.16.1.1
+set protocols static route 10.60.10.0/24 next-hop 10.10.140.140
+
 #temp for testing
 set protocols static route 10.10.93.0/24 next-hop 172.16.1.254

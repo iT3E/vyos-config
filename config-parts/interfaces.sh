@@ -1,9 +1,9 @@
 #!/bin/vbash
 
-# set interfaces ethernet eth0 vif 900 address '10.10.90.1/24'
-# set interfaces ethernet eth0 vif 900 description 'unifi-mgmt-900'
-# set interfaces ethernet eth0 vif 910 address '10.10.91.1/24'
-# set interfaces ethernet eth0 vif 910 description 'unifi-frontend-910'
+set interfaces ethernet eth0 vif 900 address '10.10.90.1/24'
+set interfaces ethernet eth0 vif 900 description 'unifi-mgmt-900'
+set interfaces ethernet eth0 vif 910 address '10.10.91.1/24'
+set interfaces ethernet eth0 vif 910 description 'unifi-frontend-910'
 set interfaces ethernet eth0 vif 120 address '10.10.120.1/24'
 set interfaces ethernet eth0 vif 120 description 'k8s-120'
 set interfaces ethernet eth0 vif 550 address '10.10.55.1/24'

@@ -86,6 +86,9 @@ set service dhcp-server shared-network-name UISP-140 subnet 10.10.140.0/24 name-
 set service dhcp-server shared-network-name UISP-140 subnet 10.10.140.0/24 range 0 start '10.10.140.100'
 set service dhcp-server shared-network-name UISP-140 subnet 10.10.140.0/24 range 0 stop '10.10.140.200'
 
+set service dhcp-server shared-network-name UISP-140 subnet 10.10.140.0/24 static-mapping sce-ep01 ip-address '10.10.140.140'
+set service dhcp-server shared-network-name UISP-140 subnet 10.10.140.0/24 static-mapping sce-ep01 mac-address '74:ac:b9:a3:5b:0b'
+
 # # Guest VLAN
 # set service dhcp-server shared-network-name GUEST authoritative
 # set service dhcp-server shared-network-name GUEST ping-check
