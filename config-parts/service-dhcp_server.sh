@@ -107,6 +107,19 @@ set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 name-s
 set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 range 0 start '10.10.120.100'
 set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 range 0 stop '10.10.120.200'
 
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 static-mapping sce-uk8sm01 ip-address '10.10.120.107'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 static-mapping sce-uk8sm01 mac-address '0e:dd:a7:62:16:91'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 static-mapping sce-uk8sm02 ip-address '10.10.120.112'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 static-mapping sce-uk8sm02 mac-address 'b6:92:1a:44:b3:2c'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 static-mapping sce-uk8sm03 ip-address '10.10.120.110'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 static-mapping sce-uk8sm03 mac-address 'd6:e4:ba:d5:5e:e8'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 static-mapping sce-uk8sw01 ip-address '10.10.120.108'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 static-mapping sce-uk8sw01 mac-address '56:55:48:8c:4a:96'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 static-mapping sce-uk8sw02 ip-address '10.10.120.109'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 static-mapping sce-uk8sw02 mac-address 'c2:8e:cc:1f:89:3d'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 static-mapping sce-uk8sw03 ip-address '10.10.120.111'
+set service dhcp-server shared-network-name k8s-120 subnet 10.10.120.0/24 static-mapping sce-uk8sw03 mac-address '7e:a6:19:07:2e:5d'
+
 # UISP-140
 set service dhcp-server shared-network-name UISP-140 authoritative
 set service dhcp-server shared-network-name UISP-140 ping-check
@@ -118,6 +131,15 @@ set service dhcp-server shared-network-name UISP-140 subnet 10.10.140.0/24 range
 
 set service dhcp-server shared-network-name UISP-140 subnet 10.10.140.0/24 static-mapping sce-ep01 ip-address '10.10.140.140'
 set service dhcp-server shared-network-name UISP-140 subnet 10.10.140.0/24 static-mapping sce-ep01 mac-address '74:ac:b9:a3:5b:0b'
+
+# ad-110
+set service dhcp-server shared-network-name ad-110 authoritative
+set service dhcp-server shared-network-name ad-110 ping-check
+set service dhcp-server shared-network-name ad-110 subnet 10.10.10.0/24 default-router '10.10.10.1'
+set service dhcp-server shared-network-name ad-110 subnet 10.10.10.0/24 lease '86400'
+set service dhcp-server shared-network-name ad-110 subnet 10.10.10.0/24 name-server '10.10.53.4'
+set service dhcp-server shared-network-name ad-110 subnet 10.10.10.0/24 range 0 start '10.10.10.100'
+set service dhcp-server shared-network-name ad-110 subnet 10.10.10.0/24 range 0 stop '10.10.10.200'
 
 # # Guest VLAN
 # set service dhcp-server shared-network-name GUEST authoritative
