@@ -453,6 +453,11 @@ set firewall name transit-10-unifi-frontend-910 enable-default-log
 set firewall name transit-10-k8s-120 default-action 'drop'
 set firewall name transit-10-k8s-120 description 'From transit-10 to k8s-120'
 set firewall name transit-10-k8s-120 enable-default-log
+set firewall name transit-10-k8s-120 rule 1 action 'accept'
+set firewall name transit-10-k8s-120 rule 1 description 'Rule: allow_80_443'
+set firewall name transit-10-k8s-120 rule 1 destination group address-group 'k8s_ingress'
+set firewall name transit-10-k8s-120 rule 1 destination port '80,443'
+set firewall name transit-10-k8s-120 rule 1 protocol 'tcp'
 
 # FROM transit-10 TO iLO-550
 set firewall name transit-10-iLO-550 default-action 'drop'
