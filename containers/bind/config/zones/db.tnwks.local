@@ -29,13 +29,18 @@ $ORIGIN tnwks.local.
 ;app-720
 
 ; transit-10
-sce-vyos01                    IN  A  172.16.1.254
+sce-vyos01                    IN  A  172.16.1.250
 sce-er01                      IN  A  172.16.1.1
 
 ; pve-11
 sce-pve01                     IN  A  10.10.11.10
 sce-pve02                     IN  A  10.10.11.11
 sce-pve03                     IN  A  10.10.11.12
+
+; ceph network non-routed
+sce-pve01-ceph                IN  A  10.15.15.50
+sce-pve02-ceph                IN  A  10.15.15.51
+sce-pve03-ceph                IN  A  10.15.15.52
 
 ; iLO-550
 ;fix these either here in DNS or on the systems
@@ -44,11 +49,11 @@ sce-pve02-ilo                 IN  A  10.10.55.101
 sce-pve03-ilo                 IN  A  10.10.55.102
 
 ; UISP-140
-sce-ep01                      IN  A  10.10.140.1
+sce-ep01                      IN  A  10.10.140.140
 
 ; app-720
-sce-hass01                    IN  A  10.10.72.10
-sce-uisp01                    IN  A  10.10.72.11
+sce-hass01                    IN  A  10.10.72.100
+sce-uisp01                    IN  A  10.10.72.101
 
 
 
