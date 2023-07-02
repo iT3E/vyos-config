@@ -569,6 +569,14 @@ set firewall name bastion-410-unifi-mgmt-900 enable-default-log
 set firewall name bastion-410-unifi-frontend-910 default-action 'drop'
 set firewall name bastion-410-unifi-frontend-910 description 'From bastion-410 to unifi-frontend-910'
 set firewall name bastion-410-unifi-frontend-910 enable-default-log
+set firewall name bastion-410-unifi-frontend-910 rule 1 action 'accept'
+set firewall name bastion-410-unifi-frontend-910 rule 1 source group address-group 'windows_bastion'
+set firewall name bastion-410-unifi-frontend-910 rule 1 destination group port-group 'powershell_remoting'
+set firewall name bastion-410-unifi-frontend-910 rule 1 protocol 'tcp_udp'
+set firewall name bastion-410-unifi-frontend-910 rule 2 action 'accept'
+set firewall name bastion-410-unifi-frontend-910 rule 2 source group address-group 'windows_bastion'
+set firewall name bastion-410-unifi-frontend-910 rule 2 destination port '3389'
+set firewall name bastion-410-unifi-frontend-910 rule 2 protocol 'tcp'
 
 # FROM bastion-410 TO k8s-120
 set firewall name bastion-410-k8s-120 default-action 'drop'
