@@ -60,7 +60,7 @@ radarr                        IN  A  10.10.120.51
 prowlarr                      IN  A  10.10.120.51
 qbittorrent                   IN  A  10.10.120.51
 sonarr                        IN  A  10.10.120.51
-jellyfin                      IN  A  10.10.120.52
+jellyfin                      IN  A  10.10.120.51
 
 
 
