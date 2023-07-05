@@ -30,7 +30,7 @@ set interfaces wireguard wg01 peer it-pc01 persistent-keepalive '15'
 set interfaces wireguard wg01 peer it-pc01 public-key 'RLV0A32MXIFkqLuwLdgpJVDaerxLcCexUCaGOkNte3w='
 set interfaces wireguard wg01 peer macbook-it allowed-ips '10.10.30.11/32'
 set interfaces wireguard wg01 peer macbook-it persistent-keepalive '15'
-set interfaces wireguard wg01 peer macbook-it public-key 'iWKTc88fDBhqlsAgoCXYvkBdf9wG4YBZ8XTg/+0Ln2I='
+set interfaces wireguard wg01 peer macbook-it public-key 'cT+qa6B3XMAVENQ2EOK2nfpnXZUGp5RkUwkUSEQZWVc='
 set interfaces wireguard wg01 port '51820'
 set interfaces wireguard wg01 private-key "${SECRET_WIREGUARD_PRIVATE_KEY}"
 
