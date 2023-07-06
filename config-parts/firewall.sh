@@ -7,6 +7,7 @@ set firewall state-policy related action 'accept'
 
 # Address Groups
 set firewall group address-group k8s_ingress address '10.10.120.51'
+set firewall group address-group k8s_ingress_internal address '10.10.120.52'
 
 set firewall group address-group 3d_printer_controllers address '10.1.3.56'
 
