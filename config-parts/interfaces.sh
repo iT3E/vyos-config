@@ -34,6 +34,16 @@ set interfaces wireguard wg01 peer macbook-it public-key 'cT+qa6B3XMAVENQ2EOK2nf
 set interfaces wireguard wg01 port '51820'
 set interfaces wireguard wg01 private-key "${SECRET_WIREGUARD_PRIVATE_KEY}"
 
+set interfaces wireguard wg02 address '10.10.31.1/24'
+set interfaces wireguard wg02 description 'WIREGUARD-AO'
+set interfaces wireguard wg02 peer it-mobile allowed-ips '10.10.31.10/32'
+set interfaces wireguard wg02 peer it-mobile persistent-keepalive '15'
+set interfaces wireguard wg02 peer it-mobile public-key 'K910+sQUVYHfbUfoN0HKlIObkqBY0P4Efu+kYw97Ylc='
+set interfaces wireguard wg02 peer mh-mobile allowed-ips '10.10.31.11/32'
+set interfaces wireguard wg02 peer mh-mobile persistent-keepalive '15'
+set interfaces wireguard wg02 peer mh-mobile public-key 'cT+qa6B3XMAVENQ2EOK2nfpnXZUGp5RkUwkUSEQZWVc='
+set interfaces wireguard wg02 port '51820'
+set interfaces wireguard wg02 private-key "${SECRET_WIREGUARD_PRIVATE_KEY}"
 #############
 
 # set interfaces ethernet eth0 description 'WAN - er01'

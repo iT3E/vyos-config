@@ -759,6 +759,10 @@ set firewall name unifi-frontend-910-transit-10 description 'From unifi-frontend
 set firewall name vpn-transit-10 default-action 'accept'
 set firewall name vpn-transit-10 description 'From vpn to transit-10'
 
+#FROM vpn-mobile TO transit-10
+set firewall name vpn-mobile-transit-10 default-action 'accept'
+set firewall name vpn-mobile-transit-10 description 'From vpn-mobile to transit-10'
+
 #FROM containers TO transit-10
 set firewall name containers-transit-10 default-action 'accept'
 set firewall name containers-transit-10 description 'From containers to transit-10'
@@ -814,6 +818,29 @@ set firewall name vpn-k8s-120 description 'From vpn to k8s-120'
 set firewall name vpn-containers default-action 'accept'
 set firewall name vpn-containers description 'From vpn to containers'
 
+
+##################################
+##                              ##
+##     Always On VPN access     ##
+##                              ##
+##################################
+
+#FROM vpn-mobile TO containers
+set firewall name vpn-mobile-containers default-action 'drop'
+set firewall name vpn-mobile-containers description 'From vpn-mobile to containers'
+set firewall name vpn-mobile-containers rule 1 action 'accept'
+set firewall name vpn-mobile-containers rule 1 description 'Rule: accept_http_https_to_haproxy_services'
+set firewall name vpn-mobile-containers rule 1 destination group address-group 'haproxy_services'
+set firewall name vpn-mobile-containers rule 1 destination port 'http,https'
+set firewall name vpn-mobile-containers rule 1 protocol 'tcp'
+set firewall name vpn-mobile-containers rule 2 action 'accept'
+set firewall name vpn-mobile-containers rule 2 description 'Rule: accept_dns'
+set firewall name vpn-mobile-containers rule 2 destination port 'domain,domain-s'
+set firewall name vpn-mobile-containers rule 2 protocol 'tcp_udp'
+
+#FROM vpn-mobile TO unifi-frontend-910
+set firewall name vpn-mobile-unifi-frontend-910 default-action 'accept'
+set firewall name vpn-mobile-unifi-frontend-910 description 'From vpn-mobile to unifi-frontend-910'
 
 #################
 #################

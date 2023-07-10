@@ -26,6 +26,7 @@ set firewall zone unifi-frontend-910 from ad-110 firewall name 'ad-110-unifi-fro
 set firewall zone unifi-frontend-910 from bastion-410 firewall name 'bastion-410-unifi-frontend-910'
 set firewall zone unifi-frontend-910 from app-720 firewall name 'app-720-unifi-frontend-910'
 set firewall zone unifi-frontend-910 from vpn firewall name 'vpn-unifi-frontend-910'
+set firewall zone unifi-frontend-910 from vpn firewall name 'vpn-mobile-unifi-frontend-910'
 set firewall zone unifi-frontend-910 interface 'eth0.910'
 
 set firewall zone k8s-120 default-action 'drop'
@@ -109,6 +110,7 @@ set firewall zone transit-10 from ad-110 firewall name 'ad-110-transit-10'
 set firewall zone transit-10 from bastion-410 firewall name 'bastion-410-transit-10'
 set firewall zone transit-10 from app-720 firewall name 'app-720-transit-10'
 set firewall zone transit-10 from vpn firewall name 'vpn-transit-10'
+set firewall zone transit-10 from vpn firewall name 'vpn-mobile-transit-10'
 set firewall zone transit-10 from containers firewall name 'containers-transit-10'
 set firewall zone transit-10 interface 'eth0.10'
 
@@ -154,9 +156,6 @@ set firewall zone app-720 from bastion-410 firewall name 'bastion-410-app-720'
 set firewall zone app-720 from vpn firewall name 'vpn-app-720'
 set firewall zone app-720 interface 'eth0.720'
 
-set firewall zone vpn default-action 'drop'
-set firewall zone vpn interface 'wg01'
-
 set firewall zone containers default-action 'drop'
 set firewall zone containers description 'VyOS containers zone'
 set firewall zone containers from unifi-mgmt-900 firewall name 'unifi-mgmt-900-containers'
@@ -170,7 +169,14 @@ set firewall zone containers from transit-10 firewall name 'transit-10-container
 set firewall zone containers from ad-110 firewall name 'ad-110-containers'
 set firewall zone containers from bastion-410 firewall name 'bastion-410-containers'
 set firewall zone containers from vpn firewall name 'vpn-containers'
+set firewall zone containers from vpn firewall name 'vpn-mobile-containers'
 set firewall zone containers interface 'pod-containers'
+
+set firewall zone vpn default-action 'drop'
+set firewall zone vpn interface 'wg01'
+
+set firewall zone vpn default-action 'drop'
+set firewall zone vpn interface 'wg02'
 
 ###########
 # set firewall zone guest default-action 'drop'

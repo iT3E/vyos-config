@@ -11,6 +11,7 @@ set container name cloudflare-ddns environment IP6_PROVIDER value "none"
 set container name cloudflare-ddns environment TZ value 'America/Los_Angeles'
 set container name cloudflare-ddns environment PGID value "1000"
 set container name cloudflare-ddns environment PUID value "1000"
+set container name cloudflare-ddns environment PROXIED value "true"
 set container name cloudflare-ddns image 'docker.io/favonia/cloudflare-ddns:1.9.2'
 set container name cloudflare-ddns memory '0'
 set container name cloudflare-ddns restart 'on-failure'
@@ -65,6 +66,16 @@ set container name haproxy-k8s-api shared-memory '0'
 set container name haproxy-k8s-api volume config source '/config/containers/haproxy/config/haproxy.cfg'
 set container name haproxy-k8s-api volume config destination '/usr/local/etc/haproxy/haproxy.cfg'
 set container name haproxy-k8s-api volume config mode 'ro'
+
+# haproxy-services
+set container name haproxy-services image 'docker.io/library/haproxy:2.8.0'
+set container name haproxy-services memory '0'
+set container name haproxy-services network containers address '10.10.53.8'
+set container name haproxy-services restart 'on-failure'
+set container name haproxy-services shared-memory '0'
+set container name haproxy-services volume config source '/config/containers/haproxy/config/haproxy-services.cfg'
+set container name haproxy-services volume config destination '/usr/local/etc/haproxy/haproxy-services.cfg'
+set container name haproxy-services volume config mode 'ro'
 
 # node-exporter
 set container name node-exporter environment procfs value '/host/proc'
