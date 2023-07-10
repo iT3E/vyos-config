@@ -73,7 +73,7 @@ set container name haproxy-services network containers address '10.10.53.8'
 set container name haproxy-services restart 'on-failure'
 set container name haproxy-services shared-memory '0'
 set container name haproxy-services volume config source '/config/containers/haproxy/config/haproxy-services.cfg'
-set container name haproxy-services volume config destination '/usr/local/etc/haproxy/haproxy-services.cfg'
+set container name haproxy-services volume config destination '/usr/local/etc/haproxy/haproxy.cfg'
 set container name haproxy-services volume config mode 'ro'
 
 # node-exporter
