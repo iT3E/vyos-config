@@ -7,3 +7,4 @@
 !/config/
 /config/*
 !/config/haproxy.cfg
+!/config/haproxy-services.cfg
