@@ -64,6 +64,9 @@ jellyfin                      IN  A  10.10.120.52
 hubble                        IN  A  10.10.120.51
 hajimari                      IN  A  10.10.120.51
 
+;haproxy-containers
+blueiris                      IN  A  10.10.53.8
+uisp                          IN  A  10.10.53.8
 
 
 
