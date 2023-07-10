@@ -75,6 +75,12 @@ set container name haproxy-services shared-memory '0'
 set container name haproxy-services volume config source '/config/containers/haproxy/config/haproxy-services.cfg'
 set container name haproxy-services volume config destination '/usr/local/etc/haproxy/haproxy.cfg'
 set container name haproxy-services volume config mode 'ro'
+set container name haproxy-services port http source '80'
+set container name haproxy-services port http destination '8080'
+set container name haproxy-services port http protocol 'tcp'
+set container name haproxy-services port https source '443'
+set container name haproxy-services port https destination '4343'
+set container name haproxy-services port https protocol 'tcp'
 
 # node-exporter
 set container name node-exporter environment procfs value '/host/proc'
