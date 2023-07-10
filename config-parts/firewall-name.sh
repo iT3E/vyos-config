@@ -717,6 +717,20 @@ set firewall name app-720-containers rule 1 destination port 'domain,domain-s'
 set firewall name app-720-containers rule 1 protocol 'tcp_udp'
 
 
+# FROM containers TO app-720
+set firewall name containers-app-720 default-action 'drop'
+set firewall name containers-app-720 description 'From containers to app-720'
+set firewall name containers-app-720 enable-default-log
+
+# FROM containers TO seccam-610
+set firewall name containers-seccam-610 default-action 'drop'
+set firewall name containers-seccam-610 description 'From containers to seccam-610'
+set firewall name containers-seccam-610 enable-default-log
+set firewall name containers-seccam-610 rule 1 action 'accept'
+set firewall name containers-seccam-610 rule 1 description 'Rule: accept_biris'
+set firewall name containers-seccam-610 rule 1 destination port '81'
+set firewall name containers-seccam-610 rule 1 protocol 'tcp'
+
 #######################
 ##                   ##
 ##  Internet Access  ##
