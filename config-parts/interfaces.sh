@@ -41,7 +41,7 @@ set interfaces wireguard wg02 peer it-mobile persistent-keepalive '15'
 set interfaces wireguard wg02 peer it-mobile public-key 'K910+sQUVYHfbUfoN0HKlIObkqBY0P4Efu+kYw97Ylc='
 set interfaces wireguard wg02 peer mh-mobile allowed-ips '10.10.31.11/32'
 set interfaces wireguard wg02 peer mh-mobile persistent-keepalive '15'
-set interfaces wireguard wg02 peer mh-mobile public-key 'cT+qa6B3XMAVENQ2EOK2nfpnXZUGp5RkUwkUSEQZWVc='
+set interfaces wireguard wg02 peer mh-mobile public-key 'E8FPyFCG/gAr8XFSlQ8nhlJdikGX53yjQERiUnLifTY='
 set interfaces wireguard wg02 port '51821'
 set interfaces wireguard wg02 private-key "${SECRET_WIREGUARD_PRIVATE_KEY}"
 #############
