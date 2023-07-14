@@ -33,7 +33,7 @@ set container name bind volume cache mode 'rw'
 
 # dnsdist
 set container name dnsdist cap-add 'net-bind-service'
-set container name dnsdist environment TZ value 'Europe/Amsterdam'
+set container name dnsdist environment TZ value 'America/Los_Angeles'
 set container name dnsdist image 'docker.io/powerdns/dnsdist-18:1.8.0'
 set container name dnsdist arguments '--log-timestamps'
 set container name dnsdist memory '0'
@@ -46,7 +46,7 @@ set container name dnsdist volume config mode 'ro'
 
 # blocky
 set container name blocky cap-add 'net-bind-service'
-set container name blocky environment TZ value 'Europe/Amsterdam'
+set container name blocky environment TZ value 'America/Los_Angeles'
 set container name blocky image 'ghcr.io/0xerr0r/blocky:v0.21'
 set container name blocky memory '0'
 set container name blocky network containers address '10.10.53.7'
