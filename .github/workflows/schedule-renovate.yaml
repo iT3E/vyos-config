@@ -25,13 +25,20 @@ on:
       - ".github/workflows/schedule-renovate.yaml"
 
 jobs:
-  renovate:
-    name: Renovate
-    uses: bjw-s/gh-workflows/.github/workflows/run-renovate.yaml@main
-    with:
-      configurationFile: ".github/renovate.json5"
-      dryRun: ${{ inputs.dryRun || 'false' }}
-      renovateLogLevel: ${{ inputs.logLevel || 'debug' }}
-    secrets:
-      app_id: ${{ secrets.BJWS_APP_ID }}
-      app_private_key: ${{ secrets.BJWS_APP_PRIVATE_KEY }}
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish Latest Release
+        uses: ivangabriele/publish-latest-release@df1a4afd8aea9d1f0ba5ebeb89452aeac7bca0a9 # renovate: tag=v3
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+  # renovate:
+  #   name: Renovate
+  #   uses: bjw-s/gh-workflows/.github/workflows/run-renovate.yaml@main
+  #   with:
+  #     configurationFile: ".github/renovate.json5"
+  #     dryRun: ${{ inputs.dryRun || 'false' }}
+  #     renovateLogLevel: ${{ inputs.logLevel || 'debug' }}
+  #   secrets:
+  #     app_id: ${{ secrets.BJWS_APP_ID }}
+  #     app_private_key: ${{ secrets.BJWS_APP_PRIVATE_KEY }}
