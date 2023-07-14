@@ -4,7 +4,11 @@
 # Track certain files and directories
 !.gitignore
 !renovate.json5
+!labeler.yaml
+!labels.yaml
+!release-drafter.yaml
 
 !/workflows/
 /workflows/*
 !/workflows/**.yaml
+!/renovate/
