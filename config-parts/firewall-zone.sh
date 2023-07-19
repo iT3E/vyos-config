@@ -41,6 +41,7 @@ set firewall zone k8s-120 from ad-110 firewall name 'ad-110-k8s-120'
 set firewall zone k8s-120 from bastion-410 firewall name 'bastion-410-k8s-120'
 set firewall zone k8s-120 from app-720 firewall name 'app-720-k8s-120'
 set firewall zone k8s-120 from vpn firewall name 'vpn-k8s-120'
+set firewall zone k8s-120 from containers firewall name 'containers-k8s-120'
 set firewall zone k8s-120 interface 'eth0.120'
 
 set firewall zone iLO-550 default-action 'drop'
