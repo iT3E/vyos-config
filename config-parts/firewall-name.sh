@@ -736,6 +736,17 @@ set firewall name containers-seccam-610 rule 1 description 'Rule: accept_biris'
 set firewall name containers-seccam-610 rule 1 destination port '81'
 set firewall name containers-seccam-610 rule 1 protocol 'tcp'
 
+# FROM containers TO k8s-120
+set firewall name containers-k8s-120 default-action 'drop'
+set firewall name containers-k8s-120 description 'From containers to k8s-120'
+set firewall name containers-k8s-120 enable-default-log
+set firewall name containers-k8s-120 rule 1 action 'accept'
+set firewall name containers-k8s-120 rule 1 description 'Rule: accept_ha_proxy'
+set firewall name containers-k8s-120 rule 1 destination port '80,443'
+set firewall name containers-k8s-120 rule 1 destination group address-group 'k8s_ingress_internal'
+set firewall name containers-k8s-120 rule 1 protocol 'tcp'
+
+
 #######################
 ##                   ##
 ##  Internet Access  ##
