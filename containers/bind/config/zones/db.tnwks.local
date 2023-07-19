@@ -55,17 +55,17 @@ sce-ep01                      IN  A  10.10.140.140
 sce-hass01                    IN  A  10.10.72.100
 sce-uisp01                    IN  A  10.10.72.101
 
-;k8s-120
+; k8s-120
 radarr                        IN  A  10.10.120.51
 prowlarr                      IN  A  10.10.120.51
 qbittorrent                   IN  A  10.10.120.51
 sonarr                        IN  A  10.10.120.51
-jellyfin                      IN  A  10.10.120.52
 hubble                        IN  A  10.10.120.51
 hajimari                      IN  A  10.10.120.51
 hass-code                     IN  A  10.10.120.51
 zwave                         IN  A  10.10.120.51
 
-;haproxy-containers
+; haproxy-containers
 blueiris                      IN  A  10.10.53.8
 hass                          IN  A  10.10.53.8
+jellyfin                      IN  A  10.10.53.8

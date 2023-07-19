@@ -83,11 +83,6 @@ set firewall name unifi-frontend-910-unifi-mgmt-900 enable-default-log
 set firewall name unifi-frontend-910-k8s-120 default-action 'drop'
 set firewall name unifi-frontend-910-k8s-120 description 'From unifi-frontend-910 to k8s-120'
 set firewall name unifi-frontend-910-k8s-120 enable-default-log
-set firewall name unifi-frontend-910-k8s-120 rule 1 action 'accept'
-set firewall name unifi-frontend-910-k8s-120 rule 1 description 'Rule: allow_80_443'
-set firewall name unifi-frontend-910-k8s-120 rule 1 destination group address-group 'k8s_ingress_internal'
-set firewall name unifi-frontend-910-k8s-120 rule 1 destination port '80,443'
-set firewall name unifi-frontend-910-k8s-120 rule 1 protocol 'tcp'
 
 # FROM unifi-frontend-910 TO iLO-550
 set firewall name unifi-frontend-910-iLO-550 default-action 'drop'
