@@ -70,10 +70,6 @@ set firewall name unifi-mgmt-900-containers rule 1 description 'Rule: accept_dns
 set firewall name unifi-mgmt-900-containers rule 1 destination port 'domain,domain-s'
 set firewall name unifi-mgmt-900-containers rule 1 protocol 'tcp_udp'
 
-
-
-
-
 # FROM unifi-frontend-910 TO unifi-mgmt-900
 set firewall name unifi-frontend-910-unifi-mgmt-900 default-action 'drop'
 set firewall name unifi-frontend-910-unifi-mgmt-900 description 'From unifi-frontend-910 to unifi-mgmt-900'
@@ -119,7 +115,7 @@ set firewall name unifi-frontend-910-app-720 default-action 'drop'
 set firewall name unifi-frontend-910-app-720 description 'From unifi-frontend-910 to app-720'
 set firewall name unifi-frontend-910-app-720 enable-default-log
 
-# From unifi-frontend-910TO containers
+# From unifi-frontend-910 TO containers
 set firewall name unifi-frontend-910-containers default-action 'drop'
 set firewall name unifi-frontend-910-containers description 'From unifi-frontend-910 to containers'
 set firewall name unifi-frontend-910-containers enable-default-log
@@ -127,10 +123,11 @@ set firewall name unifi-frontend-910-containers rule 1 action 'accept'
 set firewall name unifi-frontend-910-containers rule 1 description 'Rule: accept_dns'
 set firewall name unifi-frontend-910-containers rule 1 destination port 'domain,domain-s'
 set firewall name unifi-frontend-910-containers rule 1 protocol 'tcp_udp'
-
-
-
-
+set firewall name unifi-frontend-910-containers rule 2 action 'accept'
+set firewall name unifi-frontend-910-containers rule 2 description 'Rule: allow_80_443_to_haproxy_services'
+set firewall name unifi-frontend-910-containers rule 2 destination group address-group 'haproxy_services'
+set firewall name unifi-frontend-910-containers rule 2 destination port '80,443'
+set firewall name unifi-frontend-910-containers rule 2 protocol 'tcp'
 
 # FROM k8s-120 TO unifi-mgmt-900
 set firewall name k8s-120-unifi-mgmt-900 default-action 'drop'
