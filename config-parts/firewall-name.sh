@@ -146,6 +146,11 @@ set firewall name k8s-120-unifi-mgmt-900 enable-default-log
 set firewall name k8s-120-unifi-frontend-910 default-action 'drop'
 set firewall name k8s-120-unifi-frontend-910 description 'From k8s-120 to unifi-frontend-910'
 set firewall name k8s-120-unifi-frontend-910 enable-default-log
+set firewall name k8s-120-unifi-frontend-910 rule 1 action 'accept'
+set firewall name k8s-120-unifi-frontend-910 rule 1 description 'Rule: allow_tcp_udp_robovac2'
+set firewall name k8s-120-unifi-frontend-910 rule 1 destination group address-group 'robovac1'
+set firewall name k8s-120-unifi-frontend-910 rule 1 protocol 'tcp_udp'
+
 
 # FROM k8s-120 TO iLO-550
 set firewall name k8s-120-iLO-550 default-action 'drop'

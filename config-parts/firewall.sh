@@ -15,6 +15,8 @@ set firewall group address-group wyze_cameras address '10.10.91.105'
 set firewall group address-group wyze_cameras address '10.10.91.178'
 set firewall group address-group wyze_cameras address '10.10.91.109'
 
+set firewall group address-group robovac1 address '10.10.91.110'
+
 set firewall group address-group security_cameras address '10.10.60.31'
 set firewall group address-group security_cameras address '10.10.60.32'
 set firewall group address-group security_cameras address '10.10.60.33'

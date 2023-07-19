@@ -40,6 +40,9 @@ set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0
 set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 static-mapping wyze_cam_3 ip-address '10.10.91.178'
 set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 static-mapping wyze_cam_3 mac-address '2c:aa:8e:1c:47:b9'
 
+set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 static-mapping robovac1 ip-address '10.10.91.110'
+set service dhcp-server shared-network-name unifi-frontend-910 subnet 10.10.91.0/24 static-mapping robovac1 mac-address '50:ec:50:03:62:5a'
+
 # seccam-610
 set service dhcp-server shared-network-name seccam-610 authoritative
 set service dhcp-server shared-network-name seccam-610 ping-check
