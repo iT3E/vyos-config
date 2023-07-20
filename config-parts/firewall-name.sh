@@ -124,8 +124,8 @@ set firewall name unifi-frontend-910-containers rule 1 description 'Rule: accept
 set firewall name unifi-frontend-910-containers rule 1 destination port 'domain,domain-s'
 set firewall name unifi-frontend-910-containers rule 1 protocol 'tcp_udp'
 set firewall name unifi-frontend-910-containers rule 2 action 'accept'
-set firewall name unifi-frontend-910-containers rule 2 description 'Rule: allow_80_443_to_haproxy_services'
-set firewall name unifi-frontend-910-containers rule 2 destination group address-group 'haproxy_services'
+set firewall name unifi-frontend-910-containers rule 2 description 'Rule: allow_80_443_to_haproxy_frontend'
+set firewall name unifi-frontend-910-containers rule 2 destination group address-group 'haproxy_frontend'
 set firewall name unifi-frontend-910-containers rule 2 destination port '80,443'
 set firewall name unifi-frontend-910-containers rule 2 protocol 'tcp'
 
