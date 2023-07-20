@@ -73,7 +73,7 @@ set container name haproxy-frontend memory '0'
 set container name haproxy-frontend network containers address '10.10.53.8'
 set container name haproxy-frontend restart 'on-failure'
 set container name haproxy-frontend shared-memory '0'
-set container name haproxy-frontend volume config source '/config/containers/haproxy/config/haproxy-services.cfg'
+set container name haproxy-frontend volume config source '/config/containers/haproxy/config/haproxy-frontend.cfg'
 set container name haproxy-frontend volume config destination '/usr/local/etc/haproxy/haproxy.cfg'
 set container name haproxy-frontend volume config mode 'ro'
 
