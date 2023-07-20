@@ -66,6 +66,6 @@ hass-code                     IN  A  10.10.120.51
 zwave                         IN  A  10.10.120.51
 
 ; haproxy-containers
-blueiris                      IN  A  10.10.53.8
-hass                          IN  A  10.10.53.8
+blueiris                      IN  A  10.10.53.9
+hass                          IN  A  10.10.53.9
 jellyfin                      IN  A  10.10.53.8

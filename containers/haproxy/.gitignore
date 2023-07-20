@@ -7,4 +7,5 @@
 !/config/
 /config/*
 !/config/haproxy.cfg
-!/config/haproxy-services.cfg
+!/config/haproxy-frontend.cfg
+!/config/haproxy-authenticated.cfg

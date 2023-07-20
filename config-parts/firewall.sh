@@ -45,7 +45,8 @@ set firewall group address-group freenas address '10.10.40.10'
 
 set firewall group address-group udmpro address '172.16.1.1'
 
-set firewall group address-group haproxy_services address '10.10.53.8'
+set firewall group address-group haproxy_frontend address '10.10.53.8'
+set firewall group address-group haproxy_authenticated address '10.10.53.9'
 
 # Port groups
 set firewall group port-group ad_auth_ports port '389'

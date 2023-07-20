@@ -66,16 +66,27 @@ set container name haproxy-k8s-api volume config source '/config/containers/hapr
 set container name haproxy-k8s-api volume config destination '/usr/local/etc/haproxy/haproxy.cfg'
 set container name haproxy-k8s-api volume config mode 'ro'
 
-# haproxy-services
-set container name haproxy-services cap-add 'net-bind-service'
-set container name haproxy-services image 'docker.io/library/haproxy:2.8.1'
-set container name haproxy-services memory '0'
-set container name haproxy-services network containers address '10.10.53.8'
-set container name haproxy-services restart 'on-failure'
-set container name haproxy-services shared-memory '0'
-set container name haproxy-services volume config source '/config/containers/haproxy/config/haproxy-services.cfg'
-set container name haproxy-services volume config destination '/usr/local/etc/haproxy/haproxy.cfg'
-set container name haproxy-services volume config mode 'ro'
+# haproxy-frontend
+set container name haproxy-frontend cap-add 'net-bind-service'
+set container name haproxy-frontend image 'docker.io/library/haproxy:2.8.1'
+set container name haproxy-frontend memory '0'
+set container name haproxy-frontend network containers address '10.10.53.8'
+set container name haproxy-frontend restart 'on-failure'
+set container name haproxy-frontend shared-memory '0'
+set container name haproxy-frontend volume config source '/config/containers/haproxy/config/haproxy-services.cfg'
+set container name haproxy-frontend volume config destination '/usr/local/etc/haproxy/haproxy.cfg'
+set container name haproxy-frontend volume config mode 'ro'
+
+# haproxy-authenticated
+set container name haproxy-authenticated cap-add 'net-bind-service'
+set container name haproxy-authenticated image 'docker.io/library/haproxy:2.8.1'
+set container name haproxy-authenticated memory '0'
+set container name haproxy-authenticated network containers address '10.10.53.9'
+set container name haproxy-authenticated restart 'on-failure'
+set container name haproxy-authenticated shared-memory '0'
+set container name haproxy-authenticated volume config source '/config/containers/haproxy/config/haproxy-authenticated.cfg'
+set container name haproxy-authenticated volume config destination '/usr/local/etc/haproxy/haproxy.cfg'
+set container name haproxy-authenticated volume config mode 'ro'
 
 # node-exporter
 set container name node-exporter environment procfs value '/host/proc'
