@@ -71,7 +71,7 @@ set firewall name unifi-mgmt-900-containers rule 1 destination port 'domain,doma
 set firewall name unifi-mgmt-900-containers rule 1 protocol 'tcp_udp'
 set firewall name unifi-mgmt-900-containers rule 2 action 'accept'
 set firewall name unifi-mgmt-900-containers rule 2 description 'Rule: accept_unifi_ap'
-set firewall name unifi-mgmt-900-containers rule 2 destination port-group 'unifi_controller_ports'
+set firewall name unifi-mgmt-900-containers rule 2 destination group port-group 'unifi_controller_ports'
 set firewall name unifi-mgmt-900-containers rule 2 protocol 'tcp_udp'
 
 # FROM unifi-frontend-910 TO unifi-mgmt-900
