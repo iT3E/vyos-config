@@ -12,6 +12,7 @@ set firewall zone unifi-mgmt-900 from ad-110 firewall name 'ad-110-unifi-mgmt-90
 set firewall zone unifi-mgmt-900 from bastion-410 firewall name 'bastion-410-unifi-mgmt-900'
 set firewall zone unifi-mgmt-900 from app-720 firewall name 'app-720-unifi-mgmt-900'
 set firewall zone unifi-mgmt-900 from vpn firewall name 'vpn-unifi-mgmt-900'
+set firewall zone unifi-mgmt-900 from containers firewall name 'containers-unifi-mgmt-900'
 set firewall zone unifi-mgmt-900 interface 'eth0.900'
 
 set firewall zone unifi-frontend-910 default-action 'drop'

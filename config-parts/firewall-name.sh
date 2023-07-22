@@ -69,6 +69,10 @@ set firewall name unifi-mgmt-900-containers rule 1 action 'accept'
 set firewall name unifi-mgmt-900-containers rule 1 description 'Rule: accept_dns'
 set firewall name unifi-mgmt-900-containers rule 1 destination port 'domain,domain-s'
 set firewall name unifi-mgmt-900-containers rule 1 protocol 'tcp_udp'
+set firewall name unifi-mgmt-900-containers rule 2 action 'accept'
+set firewall name unifi-mgmt-900-containers rule 2 description 'Rule: accept_unifi_ap'
+set firewall name unifi-mgmt-900-containers rule 2 destination port-group 'unifi_controller_ports'
+set firewall name unifi-mgmt-900-containers rule 2 protocol 'tcp_udp'
 
 # FROM unifi-frontend-910 TO unifi-mgmt-900
 set firewall name unifi-frontend-910-unifi-mgmt-900 default-action 'drop'
@@ -738,6 +742,14 @@ set firewall name containers-k8s-120 rule 1 destination port '80,443'
 set firewall name containers-k8s-120 rule 1 destination group address-group 'k8s_ingress_internal'
 set firewall name containers-k8s-120 rule 1 protocol 'tcp'
 
+# FROM containers TO unifi-mgmt-900
+set firewall name containers-unifi-mgmt-900 default-action 'drop'
+set firewall name containers-unifi-mgmt-900 description 'From containers to unifi-mgmt-900'
+set firewall name containers-unifi-mgmt-900 enable-default-log
+set firewall name containers-unifi-mgmt-900 rule 1 action 'accept'
+set firewall name containers-unifi-mgmt-900 rule 1 description 'Rule: accept_unifi_controller'
+set firewall name containers-unifi-mgmt-900 rule 1 destination port '22,3478'
+set firewall name containers-unifi-mgmt-900 rule 1 protocol 'tcp_udp'
 
 #######################
 ##                   ##

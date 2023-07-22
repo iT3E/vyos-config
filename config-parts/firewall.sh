@@ -48,6 +48,9 @@ set firewall group address-group udmpro address '172.16.1.1'
 set firewall group address-group haproxy_frontend address '10.10.53.8'
 set firewall group address-group haproxy_authenticated address '10.10.53.9'
 
+set firewall group address-group unifi_controller address '10.10.53.10'
+
+
 # Port groups
 set firewall group port-group ad_auth_ports port '389'
 set firewall group port-group ad_auth_ports port '53'
@@ -71,6 +74,9 @@ set firewall group port-group ad_auth_ports port '49152-65535'
 set firewall group port-group powershell_remoting port '5985'
 set firewall group port-group powershell_remoting port '5986'
 
+set firewall group port-group unifi_controller_ports port '8080'
+set firewall group port-group unifi_controller_ports port '3478'
+set firewall group port-group unifi_controller_ports port '6789'
 
 # set firewall group address-group 3d_printer_controllers address '10.1.3.56'
 
