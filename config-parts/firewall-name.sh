@@ -871,6 +871,11 @@ set firewall name vpn-mobile-containers rule 2 action 'accept'
 set firewall name vpn-mobile-containers rule 2 description 'Rule: accept_dns'
 set firewall name vpn-mobile-containers rule 2 destination port 'domain,domain-s'
 set firewall name vpn-mobile-containers rule 2 protocol 'tcp_udp'
+set firewall name vpn-mobile-containers rule 3 action 'accept'
+set firewall name vpn-mobile-containers rule 3 description 'Rule: accept_8443_unifi_controller'
+set firewall name vpn-mobile-containers rule 3 destination group address-group 'unifi_controller'
+set firewall name vpn-mobile-containers rule 3 destination port '8443'
+set firewall name vpn-mobile-containers rule 3 protocol 'tcp'
 
 #FROM vpn-mobile TO unifi-frontend-910
 set firewall name vpn-mobile-unifi-frontend-910 default-action 'accept'
