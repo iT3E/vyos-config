@@ -20,10 +20,10 @@ set system name-server '1.1.1.1'
 
 set system sysctl parameter kernel.pty.max value '24000'
 
-# set system syslog host 10.45.0.2 facility kern level 'warning'
-# set system syslog host 10.45.0.2 protocol 'tcp'
-# set system syslog host 10.45.0.2 port '6001'
-# set system syslog host 10.45.0.2 format 'octet-counted'
+set system syslog host 10.10.120.56 facility kern level 'warning'
+set system syslog host 10.10.120.56 protocol 'tcp'
+set system syslog host 10.10.120.56 port '6001'
+set system syslog host 10.10.120.56 format 'octet-counted'
 
 # set system task-scheduler task backup-config crontab-spec '30 0 * * *'
 # set system task-scheduler task backup-config executable path '/config/scripts/custom-config-backup.sh'
