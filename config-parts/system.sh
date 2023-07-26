@@ -20,6 +20,7 @@ set system name-server '1.1.1.1'
 
 set system sysctl parameter kernel.pty.max value '24000'
 
+set system syslog global facility all level info
 set system syslog host 10.10.120.56 facility kern level 'warning'
 set system syslog host 10.10.120.56 protocol 'tcp'
 set system syslog host 10.10.120.56 port '6001'
