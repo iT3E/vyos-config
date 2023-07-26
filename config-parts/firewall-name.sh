@@ -191,8 +191,11 @@ set firewall name k8s-120-containers rule 1 action 'accept'
 set firewall name k8s-120-containers rule 1 description 'Rule: accept_dns'
 set firewall name k8s-120-containers rule 1 destination port 'domain,domain-s'
 set firewall name k8s-120-containers rule 1 protocol 'tcp_udp'
-
-
+set firewall name k8s-120-containers rule 2 action 'accept'
+set firewall name k8s-120-containers rule 2 description 'Rule: accept_8443_unifi_controller'
+set firewall name k8s-120-containers rule 2 destination group address-group 'unifi_controller'
+set firewall name k8s-120-containers rule 2 destination port '8443'
+set firewall name k8s-120-containers rule 2 protocol 'tcp'
 
 
 # FROM iLO-550 TO unifi-mgmt-900
