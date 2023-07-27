@@ -67,7 +67,7 @@ zwave                         IN  A  10.10.120.51
 alertmanager                  IN  A  10.10.120.51
 backbox-exporter              IN  A  10.10.120.51
 prometheus                    IN  A  10.10.120.51
-loki-cluster-0                IN  A  10.10.120.51
+loki                          IN  A  10.10.120.51
 thanos                        IN  A  10.10.120.51
 
 ; haproxy-containers
