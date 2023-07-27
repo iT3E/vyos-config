@@ -274,6 +274,11 @@ set firewall name pve-11-unifi-frontend-910 enable-default-log
 set firewall name pve-11-k8s-120 default-action 'drop'
 set firewall name pve-11-k8s-120 description 'From pve-11 to k8s-120'
 set firewall name pve-11-k8s-120 enable-default-log
+set firewall name pve-11-k8s-120 rule 1 action 'accept'
+set firewall name pve-11-k8s-120 rule 1 description 'Rule: accept_syslog_6003'
+set firewall name pve-11-k8s-120 rule 1 destination group address-group 'k8s_vector_aggregator'
+set firewall name pve-11-k8s-120 rule 1 destination port '6003'
+set firewall name pve-11-k8s-120 rule 1 protocol 'tcp'
 
 # FROM pve-11 TO iLO-550
 set firewall name pve-11-iLO-550 default-action 'drop'

@@ -54,6 +54,7 @@ set firewall group address-group haproxy_authenticated address '10.10.53.9'
 
 set firewall group address-group unifi_controller address '10.10.53.10'
 
+set firewall group address-group k8s_vector_aggregator address '10.10.120.56'
 
 # Port groups
 set firewall group port-group ad_auth_ports port '389'
