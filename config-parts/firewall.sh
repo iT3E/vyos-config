@@ -33,6 +33,10 @@ set firewall group address-group ilo address '10.10.55.101'
 set firewall group address-group ilo address '10.10.55.102'
 set firewall group address-group ilo address '10.10.55.103'
 
+set firewall group address-group pve_hosts address '10.10.11.10'
+set firewall group address-group pve_hosts address '10.10.11.11'
+set firewall group address-group pve_hosts address '10.10.11.12'
+
 set firewall group address-group domain_controllers address '10.10.10.10'
 set firewall group address-group domain_controllers address '10.10.10.11'
 set firewall group address-group domain_controllers address '10.10.10.12'

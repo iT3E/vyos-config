@@ -157,6 +157,11 @@ set firewall name k8s-120-iLO-550 enable-default-log
 set firewall name k8s-120-pve-11 default-action 'drop'
 set firewall name k8s-120-pve-11 description 'From k8s-120 to pve-11'
 set firewall name k8s-120-pve-11 enable-default-log
+set firewall name k8s-120-pve-11 rule 1 action 'accept'
+set firewall name k8s-120-pve-11 rule 1 description 'Rule: allow_9221_to_pve'
+set firewall name k8s-120-pve-11 rule 1 destination group address-group 'pve_hosts'
+set firewall name k8s-120-pve-11 rule 1 destination port '9221'
+set firewall name k8s-120-pve-11 rule 1 protocol 'tcp'
 
 # FROM k8s-120 TO seccam-610
 set firewall name k8s-120-seccam-610 default-action 'drop'
