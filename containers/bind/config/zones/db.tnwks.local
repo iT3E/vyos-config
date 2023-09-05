@@ -42,6 +42,8 @@ sce-pve01-ceph                IN  A  10.15.15.50
 sce-pve02-ceph                IN  A  10.15.15.51
 sce-pve03-ceph                IN  A  10.15.15.52
 
+s3                            IN  A  10.15.15.50
+
 ; iLO-550
 ;fix these either here in DNS or on the systems
 sce-pve01-ilo                 IN  A  10.10.55.100
