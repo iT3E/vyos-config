@@ -167,6 +167,11 @@ set firewall name k8s-120-pve-11 rule 2 description 'Rule: allow_9100_to_pve'
 set firewall name k8s-120-pve-11 rule 2 destination group address-group 'pve_hosts'
 set firewall name k8s-120-pve-11 rule 2 destination port '9100'
 set firewall name k8s-120-pve-11 rule 2 protocol 'tcp'
+set firewall name k8s-120-pve-11 rule 3 action 'accept'
+set firewall name k8s-120-pve-11 rule 3 description 'Rule: allow_9089_to_pve'
+set firewall name k8s-120-pve-11 rule 3 destination group address-group 'pve_hosts'
+set firewall name k8s-120-pve-11 rule 3 destination port '9089'
+set firewall name k8s-120-pve-11 rule 3 protocol 'tcp'
 
 # FROM k8s-120 TO seccam-610
 set firewall name k8s-120-seccam-610 default-action 'drop'
