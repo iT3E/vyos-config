@@ -52,6 +52,10 @@ set firewall group address-group udmpro address '172.16.1.1'
 set firewall group address-group haproxy_frontend address '10.10.53.8'
 set firewall group address-group haproxy_authenticated address '10.10.53.9'
 
+set firewall group address-group haproxy_all address '10.10.53.2'
+set firewall group address-group haproxy_all address '10.10.53.8'
+set firewall group address-group haproxy_all address '10.10.53.9'
+
 set firewall group address-group unifi_controller address '10.10.53.10'
 
 set firewall group address-group k8s_vector_aggregator address '10.10.120.56'

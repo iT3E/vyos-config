@@ -211,6 +211,11 @@ set firewall name k8s-120-containers rule 2 description 'Rule: accept_8443_unifi
 set firewall name k8s-120-containers rule 2 destination group address-group 'unifi_controller'
 set firewall name k8s-120-containers rule 2 destination port '8443'
 set firewall name k8s-120-containers rule 2 protocol 'tcp'
+set firewall name k8s-120-containers rule 3 action 'accept'
+set firewall name k8s-120-containers rule 3 description 'Rule: accept_8404_haproxy_prometheus'
+set firewall name k8s-120-containers rule 3 destination group address-group 'haproxy_all'
+set firewall name k8s-120-containers rule 3 destination port '8404'
+set firewall name k8s-120-containers rule 3 protocol 'tcp'
 
 
 # FROM iLO-550 TO unifi-mgmt-900
