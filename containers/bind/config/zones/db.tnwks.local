@@ -68,11 +68,12 @@ hass-code                     IN  A  10.10.120.51
 zwave                         IN  A  10.10.120.51
 alertmanager                  IN  A  10.10.120.51
 backbox-exporter              IN  A  10.10.120.51
-prometheus                    IN  A  10.10.120.51
+prometheus                    IN  A  10.10.120.51   
 loki                          IN  A  10.10.120.51
 thanos                        IN  A  10.10.120.51
 synapse-admin                 IN  A  10.10.120.51
 changedetection               IN  A  10.10.120.51
+syncthing                     IN  A  10.10.120.51
 
 ; haproxy-containers
 blueiris                      IN  A  10.10.53.9
