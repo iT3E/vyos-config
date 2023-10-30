@@ -79,3 +79,5 @@ obsidian-couchdb              IN  A  10.10.120.51
 blueiris                      IN  A  10.10.53.9
 hass                          IN  A  10.10.53.9
 jellyfin                      IN  A  10.10.53.8
+obsidian-couchdb              IN  A  10.10.53.9
+
