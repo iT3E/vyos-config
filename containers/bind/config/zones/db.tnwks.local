@@ -73,7 +73,6 @@ loki                          IN  A  10.10.120.51
 thanos                        IN  A  10.10.120.51
 synapse-admin                 IN  A  10.10.120.51
 changedetection               IN  A  10.10.120.51
-obsidian-couchdb              IN  A  10.10.120.51
 
 ; haproxy-containers
 blueiris                      IN  A  10.10.53.9
