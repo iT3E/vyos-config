@@ -1,5 +1,4 @@
 #!/bin/vbash
-
 set interfaces ethernet eth0 vif 900 address '10.10.90.1/24'
 set interfaces ethernet eth0 vif 900 description 'unifi-mgmt-900'
 set interfaces ethernet eth0 vif 910 address '10.10.91.1/24'
@@ -31,6 +30,9 @@ set interfaces wireguard wg01 peer it-pc01 public-key 'RLV0A32MXIFkqLuwLdgpJVDae
 set interfaces wireguard wg01 peer macbook-it allowed-ips '10.10.30.11/32'
 set interfaces wireguard wg01 peer macbook-it persistent-keepalive '15'
 set interfaces wireguard wg01 peer macbook-it public-key 'cT+qa6B3XMAVENQ2EOK2nfpnXZUGp5RkUwkUSEQZWVc='
+set interfaces wireguard wg01 peer xps-it allowed-ips '10.10.30.12/32'
+set interfaces wireguard wg01 peer xps-it persistent-keepalive '15'
+set interfaces wireguard wg01 peer xps-it public-key 'ftYscBzFt6+7zBotvBR8MO9M1PhziWtg+s9FKJmZskc='
 set interfaces wireguard wg01 port '51820'
 set interfaces wireguard wg01 private-key "${SECRET_WIREGUARD_PRIVATE_KEY}"
 
