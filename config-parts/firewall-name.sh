@@ -904,6 +904,12 @@ set firewall name vpn-mobile-containers rule 3 description 'Rule: accept_8443_un
 set firewall name vpn-mobile-containers rule 3 destination group address-group 'unifi_controller'
 set firewall name vpn-mobile-containers rule 3 destination port '8443'
 set firewall name vpn-mobile-containers rule 3 protocol 'tcp'
+set firewall name vpn-mobile-containers rule 4 action 'accept'
+set firewall name vpn-mobile-containers rule 4 description 'Rule: accept_http_https_to_haproxy_frontend'
+set firewall name vpn-mobile-containers rule 4 destination group address-group 'haproxy_frontend'
+set firewall name vpn-mobile-containers rule 4 destination port 'http,https'
+set firewall name vpn-mobile-containers rule 4 protocol 'tcp'
+
 
 #FROM vpn-mobile TO unifi-frontend-910
 set firewall name vpn-mobile-unifi-frontend-910 default-action 'accept'
