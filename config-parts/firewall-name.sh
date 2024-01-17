@@ -184,6 +184,12 @@ set firewall name k8s-120-pve-11 rule 3 protocol 'tcp'
 set firewall name k8s-120-seccam-610 default-action 'drop'
 set firewall name k8s-120-seccam-610 description 'From k8s-120 to seccam-610'
 set firewall name k8s-120-seccam-610 enable-default-log
+set firewall name k8s-120-seccam-610 rule 1 action 'accept'
+set firewall name k8s-120-seccam-610 rule 1 description 'Rule: allow_rtsp_to_seccam'
+set firewall name k8s-120-seccam-610 rule 1 destination group address-group 'security_cameras'
+set firewall name k8s-120-seccam-610 rule 1 destination port '554'
+set firewall name k8s-120-seccam-610 rule 1 protocol 'tcp_udp'
+
 
 # FROM k8s-120 TO UISP-140
 set firewall name k8s-120-UISP-140 default-action 'drop'
