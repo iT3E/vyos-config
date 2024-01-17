@@ -146,6 +146,13 @@ set firewall name k8s-120-unifi-frontend-910 rule 1 action 'accept'
 set firewall name k8s-120-unifi-frontend-910 rule 1 description 'Rule: allow_tcp_udp_robovac2'
 set firewall name k8s-120-unifi-frontend-910 rule 1 destination group address-group 'robovac1'
 set firewall name k8s-120-unifi-frontend-910 rule 1 protocol 'tcp_udp'
+set firewall name k8s-120-unifi-frontend-910 rule 2 action 'accept'
+set firewall name k8s-120-unifi-frontend-910 rule 2 description 'Rule: allow_tcp_udp_wyze'
+set firewall name k8s-120-unifi-frontend-910 rule 2 destination group address-group 'wyze_cameras'
+set firewall name k8s-120-unifi-frontend-910 rule 2 protocol 'tcp_udp'
+set firewall name k8s-120-unifi-frontend-910 rule 2 destination port '554'
+
+
 
 
 # FROM k8s-120 TO iLO-550
