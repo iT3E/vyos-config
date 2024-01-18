@@ -12,7 +12,7 @@ set firewall group address-group k8s_ingress_internal address '10.10.120.52'
 set firewall group address-group 3d_printer_controllers address '10.1.3.56'
 
 set firewall group address-group wyze_cameras address '10.10.91.105'
-set firewall group address-group wyze_cameras address '10.10.91.178'
+set firewall group address-group wyze_cameras address '10.10.91.179'
 set firewall group address-group wyze_cameras address '10.10.91.109'
 
 set firewall group address-group robovac1 address '10.10.91.110'
