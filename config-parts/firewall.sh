@@ -22,6 +22,7 @@ set firewall group address-group security_cameras address '10.10.60.32'
 set firewall group address-group security_cameras address '10.10.60.33'
 set firewall group address-group security_cameras address '10.10.60.34'
 set firewall group address-group security_cameras address '10.10.60.35'
+set firewall group address-group security_cameras address '10.10.60.100'
 
 set firewall group address-group blue_iris address '10.10.60.210'
 
