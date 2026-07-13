@@ -8,6 +8,17 @@ upstream:
     - tcp-tls:1.1.1.1:853
     - tcp-tls:1.0.0.1:853
 
+# Split-horizon / local overrides (restored from 2026-04-19 airMAX fix)
+customDNS:
+  customTTL: 1h
+  rewrite:
+    tnwks.us: tnwks.us
+  mapping:
+    unms.tnwks.us: 10.10.91.1
+    uisp.tnwks.us: 10.10.91.1
+    internal.tnwks.us: 10.10.91.142
+    "*.internal.tnwks.us": 10.10.91.142
+
 blocking:
   blackLists:
     ads:
