@@ -57,7 +57,7 @@ set container name blocky volume config destination '/app/config.yml'
 set container name blocky volume config mode 'ro'
 
 # haproxy-k8s-api
-set container name haproxy-k8s-api image 'docker.io/library/haproxy:2.8.2'
+set container name haproxy-k8s-api image 'docker.io/library/haproxy:2.8.4'
 set container name haproxy-k8s-api memory '0'
 set container name haproxy-k8s-api network containers address '10.10.53.2'
 set container name haproxy-k8s-api restart 'on-failure'
@@ -68,7 +68,7 @@ set container name haproxy-k8s-api volume config mode 'ro'
 
 # haproxy-frontend
 set container name haproxy-frontend cap-add 'net-bind-service'
-set container name haproxy-frontend image 'docker.io/library/haproxy:2.8.2'
+set container name haproxy-frontend image 'docker.io/library/haproxy:2.8.4'
 set container name haproxy-frontend memory '0'
 set container name haproxy-frontend network containers address '10.10.53.8'
 set container name haproxy-frontend restart 'on-failure'
@@ -79,7 +79,7 @@ set container name haproxy-frontend volume config mode 'ro'
 
 # haproxy-authenticated
 set container name haproxy-authenticated cap-add 'net-bind-service'
-set container name haproxy-authenticated image 'docker.io/library/haproxy:2.8.2'
+set container name haproxy-authenticated image 'docker.io/library/haproxy:2.8.4'
 set container name haproxy-authenticated memory '0'
 set container name haproxy-authenticated network containers address '10.10.53.9'
 set container name haproxy-authenticated restart 'on-failure'
