@@ -93,6 +93,11 @@ set container name node-exporter environment procfs value '/host/proc'
 set container name node-exporter environment rootfs value '/host/rootfs'
 set container name node-exporter environment sysfs value '/host/sys'
 set container name node-exporter image 'quay.io/prometheus/node-exporter:v1.6.1'
+# textfile collector: dhcp_lease_info from scripts/dhcp-leases-textfile.py
+set container name node-exporter arguments '--collector.textfile.directory=/textfile'
+set container name node-exporter volume textfile source '/config/node-exporter'
+set container name node-exporter volume textfile destination '/textfile'
+set container name node-exporter volume textfile mode 'ro'
 set container name node-exporter memory '0'
 set container name node-exporter allow-host-networks
 set container name node-exporter restart 'on-failure'

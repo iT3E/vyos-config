@@ -30,3 +30,22 @@ set system syslog host 10.10.120.56 format 'octet-counted'
 # set system task-scheduler task backup-config executable path '/config/scripts/custom-config-backup.sh'
 
 set system time-zone 'America/Los_Angeles'
+
+# WAN flow export -> tnwks-ops monitoring/flow-collector (WAN top talkers in
+# War Room alerts). eth1.10 is the transit to the EdgeRouter, so only
+# WAN-bound traffic is exported, with real client IPs (no NAT here).
+# Ingress on eth1.10 = download, egress = upload. Windows host 10.10.91.142
+# relays udp/2055 into WSL (tnwks-ops docs/wsl-lan-exposure.md).
+set system flow-accounting interface 'eth1.10'
+set system flow-accounting enable-egress
+set system flow-accounting disable-imt
+set system flow-accounting netflow version '10'
+set system flow-accounting netflow server 10.10.91.142 port '2055'
+set system flow-accounting netflow source-address '10.10.91.1'
+# Export long-lived flows every 30s so per-client rates are near real time.
+set system flow-accounting netflow timeout max-active-life '30'
+
+# DHCP client names for the flow metrics: scripts/dhcp-leases-textfile.py
+# writes /config/node-exporter/dhcp.prom (node-exporter textfile collector).
+set system task-scheduler task dhcp-leases-textfile interval '1m'
+set system task-scheduler task dhcp-leases-textfile executable path '/config/scripts/dhcp-leases-textfile.py'
