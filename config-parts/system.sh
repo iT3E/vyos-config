@@ -33,17 +33,16 @@ set system time-zone 'America/Los_Angeles'
 
 # WAN flow export -> tnwks-ops monitoring/flow-collector (WAN top talkers in
 # War Room alerts). eth1.10 is the transit to the EdgeRouter, so only
-# WAN-bound traffic is exported, with real client IPs (no NAT here).
-# Ingress on eth1.10 = download, egress = upload. Windows host 10.10.91.142
-# relays udp/2055 into WSL (tnwks-ops docs/wsl-lan-exposure.md).
-set system flow-accounting interface 'eth1.10'
-set system flow-accounting enable-egress
-set system flow-accounting disable-imt
-set system flow-accounting netflow version '10'
-set system flow-accounting netflow server 10.10.91.142 port '2055'
-set system flow-accounting netflow source-address '10.10.91.1'
-# Export long-lived flows every 30s so per-client rates are near real time.
-set system flow-accounting netflow timeout max-active-life '30'
+# WAN-bound traffic is sampled, with real client IPs (no NAT here).
+# sFlow (hsflowd, pcap), not `system flow-accounting`: on this release the
+# netflow exporter (pmacct uacctd) misreads addresses on VLAN interfaces
+# (src field = IPv4 TTL/proto/checksum bytes). 1-in-100 packet sampling.
+# Windows host 10.10.91.142 relays udp/2055 into WSL
+# (tnwks-ops docs/wsl-lan-exposure.md).
+set system sflow interface 'eth1.10'
+set system sflow agent-address '10.10.91.1'
+set system sflow sampling-rate '100'
+set system sflow server 10.10.91.142 port '2055'
 
 # DHCP client names for the flow metrics: scripts/dhcp-leases-textfile.py
 # writes /config/node-exporter/dhcp.prom (node-exporter textfile collector).
