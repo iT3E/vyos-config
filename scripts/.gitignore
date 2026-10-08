@@ -5,6 +5,7 @@
 !.gitignore
 !*.sh
 !*.script
+!dhcp-leases-textfile.py
 
 !/commit
 /commit/*
